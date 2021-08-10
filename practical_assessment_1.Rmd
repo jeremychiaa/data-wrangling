@@ -1,8 +1,8 @@
 ---
 title: "Data Wrangling (Data Preprocessing)"
-author: "Student name submitting the assessment report come here"
+author: "Jeremy Jian Zhi Chia"
 subtitle: Practical assessment 1
-date: ""
+date: "11/08/2021"
 output:
   html_document:
     df_print: paged
@@ -19,6 +19,10 @@ output:
 
 library(kableExtra)
 library(magrittr)
+library(dplyr)
+library(readr)
+library(tidyr)
+library(knitr)
 
 
 ```
@@ -29,9 +33,9 @@ library(magrittr)
 
 # Add your names, numbers and percentage of your contribution here.
 
-na<- c(" name1"," name2")
-no<- c(" number1","  number2")
-pc<- c("Percentage1","Percentage2")
+na<- c("Jeremy Jian Zhi Chia")
+no<- c("3917515")
+pc<- c("100%")
 
 s<- data.frame(cbind(na,no,pc))
 colnames(s)<- c("Student name", "Student number", "Percentage of contribution")
@@ -46,34 +50,18 @@ s %>% kbl(caption = "Group information") %>%
 
 ## **Data Description**
 
-Provide explanations here. You may use bulleted lists like this:
+* This dataset consists of all Netflix original films, documentaries and specials released as of June 1st, 2021.
+* The creator of this dataset web scraped the data from Wikipedia and integrated it with another dataset consisting of all their corresponding IMDB scores.
+* URL of dataset: https://www.kaggle.com/luiscorter/netflix-original-films-imdb-scores/version/1
 
-* a
-* b
-* ....
+### **Variables of Dataset**
 
-<!-- Locate an open source of data from the web. This can be a tabular, spreadsheet data (i.e., .txt, .csv, .xls, .xlsx files), data sets from other statistical software (i.e., SPSS, SAS, Stata etc. data files), or you can scrape HTML table data. -->
-
-<!-- Some sources for open data are provided below, but I encourage you to find others: -->
-
-
-<!-- * [http://www.abs.gov.au/](http://www.abs.gov.au/) -->
-
-<!-- * [https://www.data.vic.gov.au/](https://www.data.vic.gov.au/) 	 -->
-
-<!-- * [http://www.bom.gov.au/](http://www.bom.gov.au/) -->
-
-<!-- * [https://www.kaggle.com](https://www.kaggle.com)  -->
-
-<!-- As a minimum, your data set should include: -->
-
-<!-- * One numeric variable. -->
-<!-- * One qualitative (categorical) variable. -->
-
-<!-- There is no limit on the number of observations and number of variables. But keep in mind that when you have a very large data set, it will increase your reading time. -->
-
-
-
+* Title of the Film
+* Genre of the Film
+* Original Premiere Date
+* Runtime (Minutes)
+* IMDB Scores (as of 01/06/2021)
+* Languages currently Available (as of 01/06/2021)
 
 ## **Read/Import Data**
 
