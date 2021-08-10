@@ -1,0 +1,154 @@
+---
+title: "Data Wrangling (Data Preprocessing)"
+author: "Student name submitting the assessment report come here"
+subtitle: Practical assessment 1
+date: ""
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  html_notebook: default
+---
+
+
+## **Setup**
+
+```{r}
+
+# Load the necessary packages required to reproduce the report. For example:
+
+library(kableExtra)
+library(magrittr)
+
+
+```
+
+
+## **Student names, numbers and percentage of contributions**
+```{r, echo=FALSE}
+
+# Add your names, numbers and percentage of your contribution here.
+
+na<- c(" name1"," name2")
+no<- c(" number1","  number2")
+pc<- c("Percentage1","Percentage2")
+
+s<- data.frame(cbind(na,no,pc))
+colnames(s)<- c("Student name", "Student number", "Percentage of contribution")
+
+s %>% kbl(caption = "Group information") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+
+
+
+```
+
+## **Data Description**
+
+Provide explanations here. You may use bulleted lists like this:
+
+* a
+* b
+* ....
+
+<!-- Locate an open source of data from the web. This can be a tabular, spreadsheet data (i.e., .txt, .csv, .xls, .xlsx files), data sets from other statistical software (i.e., SPSS, SAS, Stata etc. data files), or you can scrape HTML table data. -->
+
+<!-- Some sources for open data are provided below, but I encourage you to find others: -->
+
+
+<!-- * [http://www.abs.gov.au/](http://www.abs.gov.au/) -->
+
+<!-- * [https://www.data.vic.gov.au/](https://www.data.vic.gov.au/) 	 -->
+
+<!-- * [http://www.bom.gov.au/](http://www.bom.gov.au/) -->
+
+<!-- * [https://www.kaggle.com](https://www.kaggle.com)  -->
+
+<!-- As a minimum, your data set should include: -->
+
+<!-- * One numeric variable. -->
+<!-- * One qualitative (categorical) variable. -->
+
+<!-- There is no limit on the number of observations and number of variables. But keep in mind that when you have a very large data set, it will increase your reading time. -->
+
+
+
+
+## **Read/Import Data**
+
+<!-- Read/Import the data into R, then save it as a data frame. You can use Base R functions or readr, xlsx, readxl, foreign, rvest packages for this purpose. In this step, you must provide the R codes with outputs (i.e. head of data set) and explain everything that you do in order to import/read/scrape the data set. You can provide the R codes with outputs using R chunks like this: -->
+
+```{r}
+
+# Import the data, provide your R codes here.
+
+
+
+```
+
+Provide explanations here. 
+
+
+## **Inspect and Understand**
+
+
+```{r}
+
+# Inspection of your data, provide R codes here.
+
+
+
+```
+
+Provide explanations here.
+
+## **Subsetting** 
+
+<!-- Subset the data frame using the first 10 observations (include all variables). Then convert it to a matrix. Check the structure of that matrix (i.e. check whether the matrix is a character, numeric, integer, factor, or logical) and explain in a few words why you ended up with that structure. Provide the R codes with outputs and explain everything that you do in this step. -->
+
+
+
+```{r}
+
+# Subset your data and convert it to a matrix, provide R codes here.
+
+
+```
+
+Provide explanations here.
+
+
+## **Create a new Data Frame**
+
+<!-- You will create a new data frame from scratch. Note that, this step is independent from the dataset that you used in the previous steps.  -->
+
+<!-- In this step you should: -->
+
+<!-- * Create a data frame from scratch with 2 variables and 10 observations. Your data frame has to contain one integer variable and one ordinal variable. Make sure that you factorised and ordered the ordinal variable properly. Show the structure of your variables and the levels of the ordinal variable. -->
+
+<!-- * Create another numeric vector and use cbind() to add this vector to your data frame. After this step you should have 3 variables in the data frame.  -->
+
+
+<!-- * Provide the R codes with outputs and explain everything that you do in this step.  -->
+
+
+```{r}
+
+# Create a new data frame, provide R codes here.
+
+
+```
+
+Provide explanations here.
+
+<!-- ## IMPORTANT NOTE:  -->
+
+<!-- The report must be uploaded to Assessment 1 section in Canvas as a **PDF** document with R codes and outputs showing. The easiest way to achieve this is to run all R chunks first, then **Preview** your notebook in **HTML** (by clicking Preview), then **Open in Browser (Chrome)**, then **Right Click on the report in Chrome** , then **Click Print** and Select the Destination Option to **Save as PDF**. Upload this PDF report as one single file via the Assessment 1 page in CANVAS. -->
+
+
+
+<!-- **DELETE the instructional text provided in the template. Failure to do this will INCREASE the SIMILARITY INDEX reported in TURNITIN** If you have any questions regarding the Assessment instructions and the R template, please post it on the discussion board.  -->
+
+<br>
+<br>
