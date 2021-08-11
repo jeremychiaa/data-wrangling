@@ -226,44 +226,16 @@ pre code {
 <h2><strong>Setup</strong></h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIExvYWQgdGhlIG5lY2Vzc2FyeSBwYWNrYWdlcyByZXF1aXJlZCB0byByZXByb2R1Y2UgdGhlIHJlcG9ydC4gRm9yIGV4YW1wbGU6XG5cbmxpYnJhcnkoa2FibGVFeHRyYSlcbmxpYnJhcnkobWFncml0dHIpXG5saWJyYXJ5KGRwbHlyKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIExvYWQgdGhlIG5lY2Vzc2FyeSBwYWNrYWdlcyByZXF1aXJlZCB0byByZXByb2R1Y2UgdGhlIHJlcG9ydC4gRm9yIGV4YW1wbGU6XG5cbmxpYnJhcnkoa2FibGVFeHRyYSlcbmxpYnJhcnkobWFncml0dHIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShyZWFkcilcbmxpYnJhcnkodGlkeXIpXG5saWJyYXJ5KGtuaXRyKVxuXG5cbmBgYCJ9 -->
 <pre class="r"><code>
 # Load the necessary packages required to reproduce the report. For example:
 
 library(kableExtra)
 library(magrittr)
-library(dplyr)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZHBseXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTprYWJsZUV4dHJh4oCZOlxuXG4gICAgZ3JvdXBfcm93c1xuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBmaWx0ZXIsIGxhZ1xuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6YmFzZeKAmTpcblxuICAgIGludGVyc2VjdCwgc2V0ZGlmZiwgc2V0ZXF1YWwsIHVuaW9uXG4ifQ== -->
-<pre><code>
-Attaching package: ‘dplyr’
-
-The following object is masked from ‘package:kableExtra’:
-
-    group_rows
-
-The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmxpYnJhcnkodGlkeXIpXG5gYGAifQ== -->
-<pre class="r"><code>library(readr)
-library(tidyr)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYdGlkeXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTptYWdyaXR0cuKAmTpcblxuICAgIGV4dHJhY3RcbiJ9 -->
-<pre><code>
-Attaching package: ‘tidyr’
-
-The following object is masked from ‘package:magrittr’:
-
-    extract</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShrbml0cilcblxuXG5gYGAifQ== -->
-<pre class="r"><code>library(knitr)
+library(dplyr)
+library(readr)
+library(tidyr)
+library(knitr)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -323,25 +295,47 @@ The following object is masked from ‘package:magrittr’:
 <!-- Read/Import the data into R, then save it as a data frame. You can use Base R functions or readr, xlsx, readxl, foreign, rvest packages for this purpose. In this step, you must provide the R codes with outputs (i.e. head of data set) and explain everything that you do in order to import/read/scrape the data set. You can provide the R codes with outputs using R chunks like this: -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Niwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IHggNiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVQzVzdUTUJSMlM5S3NMZHVLRVBkNUFOWTFxWWEydXhReTZEYktwcldDWGVLNlhtSXRzU1BIR2V5TzE0Q240UUhnaGJoWXNSTTdVM0trOVBqNzdPLzgyS2ZYNGMxMGNETUFBRHdEVmtmKzJuSUpldSt1UFAvSUI4RHFTdFFCRnVnci8xM3V2MVRiOGh1VnZ0cllQNlVDYzFmRTJKMVJrbUpORDBQSTc5ejNqQ09jYThwWnFUTlpwdUdlZ3BjWnB1NmNGWG10dTRBd0llNUZYTVJFVTNiSXlUMXVwUjJHREJVcHBnTHlCMDN0ckdKT2tnUnpqVjh0RWNFVVlmZVdJRUVZUFF3NVRLRXBlODQ0WjZydWhzWlpQT1N5SFJPeU55dVZyZHg3c3lJcWN1RWV2WGI5aVhkaUltclc5eFR0VHpUOUlzUUlwMnQ1UmY2Ynh2blJPYVNGck43MVRrcisyUENYU0RCMWZqcHBCQnA5WXZkVklFL0hrWldvcW9JRktDMVlCWlZmL3E3OGx4K1YvNno5K2l2UVZ1a3NyYlArS1B0YisvNVBaYitDNGJTMDRMbVJOVzVoZEVxamhPVHg0VG5NSU1YMUN6cExDU1Z2NEptUUR3cXBnVnBsM25aTzZJWTBRWFB3YkFwVE9VTE4zUGFLaU1Ra3REOWd5ZzNZdWVJNEpiakd6blZCeGROWURzNFc0VnQzaWRpVDRDT2tVUUVqM01yYjUremIyT1RlbFY5WDNlSjJ1LzNYTGhBbE1EY0ZHbkt3Z1FLT2IrWEFxY0Y5YkVrY2xxbXhrcUt1K2t2WkxYR0h0NGo5Z3FwS05nY29MdWpkZ2E4U2xOdVY3ZXAxcjdsV0tidGJIY28yRTQxcFJHaDlkUWxjNDhTTXRleTRiSGljY1VLRjZVU3krVmd3K1lxR1FTd3hUTmtiZVB3UDVjVitRa29FQUFBPSJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEltcG9ydCBkYXRhc2V0XG5uZXRmbGl4IDwtIHJlYWRfY3N2KFwiTmV0ZmxpeE9yaWdpbmFscy5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>
+# Import dataset
+netflix &lt;- read_csv(&quot;NetflixOriginals.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNTg0IENvbHVtbnM6IDZcbi0tIENvbHVtbiBzcGVjaWZpY2F0aW9uIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbkRlbGltaXRlcjogXCIsXCJcbmNociAoNCk6IFRpdGxlLCBHZW5yZSwgUHJlbWllcmUsIExhbmd1YWdlXG5kYmwgKDIpOiBSdW50aW1lLCBJTURCIFNjb3JlXG5cbmkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG5pIFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 584 Columns: 6
+-- Column specification -------------------------------------------------------------------------------------------------------------------
+Delimiter: &quot;,&quot;
+chr (4): Title, Genre, Premiere, Language
+dbl (2): Runtime, IMDB Score
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDaGVjayBmaXJzdCBmZXcgcm93cyBvZiBpbXBvcnRlZCBkYXRhc2V0XG5oZWFkKG5ldGZsaXgpXG5gYGAifQ== -->
+<pre class="r"><code># Check first few rows of imported dataset
+head(netflix)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Niwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IHggNiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVQzVzdUTUJSMlM5S3NMUnRCaVBzOEFPdWFWRVhzTG9VTXVvMnlhYTFnbDdpdTExaEw3TWh4QnJ2ak5lQnBlQUI0SVM1VzdNVE9sQndwUGY0Kyt6cy85dWxWZEQwWlhBOEFBRStBMVpHL3RseUMzcnRMUDVnR0FGaGRpVHJBQW4zbHY4djlGMnBiZm03cHE0MW5KMVJnN29rWWV6TktVcXpwWVFUNXJmZWVjWVJ6VFRrcmRTYkxORHhROENMRDFKdXpJcTkxNXhBbXhEdVBpNWhveW80NHVjT3R0TU9Jb1NMRlZFQityNm05VmN4SmttQ3U4Y3NsSXBnaTdOMFFKQWlqUnhHSEtUUmx6eG5uVE5YZDBEaUwrMXkyWTBMMlpxV3lsZnRnVm15TFhIalRWMTR3OW85TlJNMEd2cUtEc2FhZlJ4amhkQzJ2S0hqZE9PK2VRVnJJNmozL3VPVGZHUDRDQ2FiT1Q4YU5RTzRuZGxjRjhuVWNXWW1xS2x5QTBzSlZXUG5sNzhwLytWSDV6OXF2dndKdGxjN1NPdXVQc3IrMTcvOVU5aXNjVGtvTG54cFo0eGJjRTdwTlNCNGZuY0VNVWx5L29MT1VVUElHbmdyNW9KQWFxRlhtYmVlRWJrZ1ROQWZQcGpDVkk5VE1iYStJU0V4Qyt3T20zSUM5UzQ1VGdtdnNYQlZVUEk3bDRIUVJ2ZldXaUQwS1BrSzZMZUFXdC9MMk9mczJNcm4zNWRkVnQ3amI3ZjYxQzBRSnpFMkJoaHhzb0lDakd6bHdhbkFmV2hLSFpXcXNwS2lyL2xKMlM5emhMY0l0cUtwa2M0amlndDRlVGljcVE3bGYyYjVlOTVwcmxiTzcwN0ZzTTlLWWJnbXQ3eTZCYTV5WXVaWXRseDJQTWs2b01LMUlOaDhKSnAvUk1JZ2xoaW1iQXcvL0FjWCtJVTFMQkFBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Genre"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Premiere"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Runtime"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["IMDB Score"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Language"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"Enter the Anime","2":"Documentary","3":"August 5, 2019","4":"58","5":"2.5","6":"English/Japanese"},{"1":"Dark Forces","2":"Thriller","3":"August 21, 2020","4":"81","5":"2.6","6":"Spanish"},{"1":"The App","2":"Science fiction/Drama","3":"December 26, 2019","4":"79","5":"2.6","6":"Italian"},{"1":"The Open House","2":"Horror thriller","3":"January 19, 2018","4":"94","5":"3.2","6":"English"},{"1":"Kaali Khuhi","2":"Mystery","3":"October 30, 2020","4":"90","5":"3.4","6":"Hindi"},{"1":"Drive","2":"Action","3":"November 1, 2019","4":"147","5":"3.5","6":"Hindi"}],"options":{"columns":{"min":{},"max":[10],"total":[6]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbmBgYCJ9 -->
+<pre class="r"><code>NA</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>The dataset is imported using readr’s read_csv() function. The imported dataset has a data structure of a tibble. The columns and first few rows of the dataset is then inspected using R’s base function head().</p>
+<p>The dataset is imported using readr’s read_csv() function. The imported dataset has a data structure of a tibble. The columns and first few rows of the dataset are then inspected using R’s base function head().</p>
 </div>
 <div id="inspect-and-understand" class="section level2">
 <h2><strong>Inspect and Understand</strong></h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNwZWN0IHN0cnVjdHVyZSBvZiBkYXRhXG5zdHIobmV0ZmxpeClcblxuYGBgIn0= -->
-<pre class="r"><code># Inspect structure of data
-str(netflix)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEluc3BlY3Qgc3RydWN0dXJlIG9mIGRhdGFcbnN0cihuZXRmbGl4KVxuYGBgIn0= -->
+<pre class="r"><code>
+# Inspect structure of data
+str(netflix)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoic3BlY190YmxfZGYgWzU4NCB4IDZdIChTMzogc3BlY190YmxfZGYvdGJsX2RmL3RibC9kYXRhLmZyYW1lKVxuICQgVGl0bGUgICAgIDogY2hyIFsxOjU4NF0gXCJFbnRlciB0aGUgQW5pbWVcIiBcIkRhcmsgRm9yY2VzXCIgXCJUaGUgQXBwXCIgXCJUaGUgT3BlbiBIb3VzZVwiIC4uLlxuICQgR2VucmUgICAgIDogY2hyIFsxOjU4NF0gXCJEb2N1bWVudGFyeVwiIFwiVGhyaWxsZXJcIiBcIlNjaWVuY2UgZmljdGlvbi9EcmFtYVwiIFwiSG9ycm9yIHRocmlsbGVyXCIgLi4uXG4gJCBQcmVtaWVyZSAgOiBjaHIgWzE6NTg0XSBcIkF1Z3VzdCA1LCAyMDE5XCIgXCJBdWd1c3QgMjEsIDIwMjBcIiBcIkRlY2VtYmVyIDI2LCAyMDE5XCIgXCJKYW51YXJ5IDE5LCAyMDE4XCIgLi4uXG4gJCBSdW50aW1lICAgOiBudW0gWzE6NTg0XSA1OCA4MSA3OSA5NCA5MCAxNDcgMTEyIDE0OSA3MyAxMzkgLi4uXG4gJCBJTURCIFNjb3JlOiBudW0gWzE6NTg0XSAyLjUgMi42IDIuNiAzLjIgMy40IDMuNSAzLjcgMy43IDMuOSA0LjEgLi4uXG4gJCBMYW5ndWFnZSAgOiBjaHIgWzE6NTg0XSBcIkVuZ2xpc2gvSmFwYW5lc2VcIiBcIlNwYW5pc2hcIiBcIkl0YWxpYW5cIiBcIkVuZ2xpc2hcIiAuLi5cbiAtIGF0dHIoKiwgXCJzcGVjXCIpPVxuICAuLiBjb2xzKFxuICAuLiAgIFRpdGxlID0gY29sX2NoYXJhY3RlcigpLFxuICAuLiAgIEdlbnJlID0gY29sX2NoYXJhY3RlcigpLFxuICAuLiAgIFByZW1pZXJlID0gY29sX2NoYXJhY3RlcigpLFxuICAuLiAgIFJ1bnRpbWUgPSBjb2xfZG91YmxlKCksXG4gIC4uICAgYElNREIgU2NvcmVgID0gY29sX2RvdWJsZSgpLFxuICAuLiAgIExhbmd1YWdlID0gY29sX2NoYXJhY3RlcigpXG4gIC4uIClcbiAtIGF0dHIoKiwgXCJwcm9ibGVtc1wiKT08ZXh0ZXJuYWxwdHI+IFxuIn0= -->
 <pre><code>spec_tbl_df [584 x 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
@@ -367,9 +361,11 @@ str(netflix)
 <p>The output above displays all the variables and their data types. The Title, Genre, Premiere and Language columns are detected by R as characters as they contain strings in the observations. Runtime and IMDB Score columns are detected as numerical data as they contain numbers within the data.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChuZXRmbGl4JFByZW1pZXJlKVxuXG5gYGAifQ== -->
-<pre class="r"><code>head(netflix$Premiere)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIENvbnZlcnQgcHJlbWllcmUgY29sdW1uJ3MgZGF0YSB0eXBlXG5uZXRmbGl4JFByZW1pZXJlIDwtIGFzLkRhdGUobmV0ZmxpeCRQcmVtaWVyZSwgZm9ybWF0ID1cIiVCICVkLCAlWVwiKVxuaGVhZChuZXRmbGl4JFByZW1pZXJlKVxuYGBgIn0= -->
+<pre class="r"><code>
+# Convert premiere column&#39;s data type
+netflix$Premiere &lt;- as.Date(netflix$Premiere, format =&quot;%B %d, %Y&quot;)
+head(netflix$Premiere)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjAxOS0wOC0wNVwiIFwiMjAyMC0wOC0yMVwiIFwiMjAxOS0xMi0yNlwiIFwiMjAxOC0wMS0xOVwiIFwiMjAyMC0xMC0zMFwiIFwiMjAxOS0xMS0wMVwiXG4ifQ== -->
 <pre><code>[1] &quot;2019-08-05&quot; &quot;2020-08-21&quot; &quot;2019-12-26&quot; &quot;2018-01-19&quot; &quot;2020-10-30&quot; &quot;2019-11-01&quot;</code></pre>
@@ -379,9 +375,11 @@ str(netflix)
 <p>The Premiere column was initially recognised as a character data type. The above code converts this character into a date format, which allows for any time-series analysis to be done if needed.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MobmV0ZmxpeCRSdW50aW1lKVxuXG5gYGAifQ== -->
-<pre class="r"><code>class(netflix$Runtime)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIENvbnZlcnQgUnVudGltZSBjb2x1bW4ncyBkYXRhIHR5cGVcbm5ldGZsaXgkUnVudGltZSA8LSBhcy5pbnRlZ2VyKG5ldGZsaXgkUnVudGltZSlcbmNsYXNzKG5ldGZsaXgkUnVudGltZSlcbmBgYCJ9 -->
+<pre class="r"><code>
+# Convert Runtime column&#39;s data type
+netflix$Runtime &lt;- as.integer(netflix$Runtime)
+class(netflix$Runtime)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaW50ZWdlclwiXG4ifQ== -->
 <pre><code>[1] &quot;integer&quot;</code></pre>
@@ -391,19 +389,73 @@ str(netflix)
 <p>As the values in the Runtime column only take integers and not values with decimals, it is then converted from a double variable into an integer.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNwZWN0IHN0cnVjdHVyZSBvZiBkYXRhIGFmdGVyIGNvbnZlcnNpb25zXG5zdHIobmV0ZmxpeClcblxuYGBgIn0= -->
-<pre class="r"><code># Inspect structure of data after conversions
-str(netflix)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDaGFuZ2UgR2VucmUgYW5kIExhbmd1YWdlIHZhcmlhYmxlcyB0byBmYWN0b3JzXG5uZXRmbGl4JEdlbnJlIDwtIGZhY3RvcihuZXRmbGl4JEdlbnJlKVxubmV0ZmxpeCRMYW5ndWFnZSA8LSBmYWN0b3IobmV0ZmxpeCRMYW5ndWFnZSlcblxuIyBDaGVjayBmYWN0b3JzXG5sZXZlbHMobmV0ZmxpeCRHZW5yZSlcbmBgYCJ9 -->
+<pre class="r"><code># Change Genre and Language variables to factors
+netflix$Genre &lt;- factor(netflix$Genre)
+netflix$Language &lt;- factor(netflix$Language)
+
+# Check factors
+levels(netflix$Genre)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoic3BlY190YmxfZGYgWzU4NCB4IDZdIChTMzogc3BlY190YmxfZGYvdGJsX2RmL3RibC9kYXRhLmZyYW1lKVxuICQgVGl0bGUgICAgIDogY2hyIFsxOjU4NF0gXCJFbnRlciB0aGUgQW5pbWVcIiBcIkRhcmsgRm9yY2VzXCIgXCJUaGUgQXBwXCIgXCJUaGUgT3BlbiBIb3VzZVwiIC4uLlxuICQgR2VucmUgICAgIDogY2hyIFsxOjU4NF0gXCJEb2N1bWVudGFyeVwiIFwiVGhyaWxsZXJcIiBcIlNjaWVuY2UgZmljdGlvbi9EcmFtYVwiIFwiSG9ycm9yIHRocmlsbGVyXCIgLi4uXG4gJCBQcmVtaWVyZSAgOiBEYXRlWzE6NTg0XSwgZm9ybWF0OiBcIjIwMTktMDgtMDVcIiBcIjIwMjAtMDgtMjFcIiBcIjIwMTktMTItMjZcIiBcIjIwMTgtMDEtMTlcIiAuLi5cbiAkIFJ1bnRpbWUgICA6IGludCBbMTo1ODRdIDU4IDgxIDc5IDk0IDkwIDE0NyAxMTIgMTQ5IDczIDEzOSAuLi5cbiAkIElNREIgU2NvcmU6IG51bSBbMTo1ODRdIDIuNSAyLjYgMi42IDMuMiAzLjQgMy41IDMuNyAzLjcgMy45IDQuMSAuLi5cbiAkIExhbmd1YWdlICA6IGNociBbMTo1ODRdIFwiRW5nbGlzaC9KYXBhbmVzZVwiIFwiU3BhbmlzaFwiIFwiSXRhbGlhblwiIFwiRW5nbGlzaFwiIC4uLlxuIC0gYXR0cigqLCBcInNwZWNcIik9XG4gIC4uIGNvbHMoXG4gIC4uICAgVGl0bGUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIC4uICAgR2VucmUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIC4uICAgUHJlbWllcmUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIC4uICAgUnVudGltZSA9IGNvbF9kb3VibGUoKSxcbiAgLi4gICBgSU1EQiBTY29yZWAgPSBjb2xfZG91YmxlKCksXG4gIC4uICAgTGFuZ3VhZ2UgPSBjb2xfY2hhcmFjdGVyKClcbiAgLi4gKVxuIC0gYXR0cigqLCBcInByb2JsZW1zXCIpPTxleHRlcm5hbHB0cj4gXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gXCJBY3Rpb25cIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkFjdGlvbi1hZHZlbnR1cmVcIiAgICAgICAgICAgICAgICAgICAgIFwiQWN0aW9uLXRocmlsbGVyXCIgICAgICAgICAgICAgICAgICAgICBcbiAgWzRdIFwiQWN0aW9uIGNvbWVkeVwiICAgICAgICAgICAgICAgICAgICAgICAgXCJBY3Rpb24gdGhyaWxsZXJcIiAgICAgICAgICAgICAgICAgICAgICBcIkFjdGlvbi9Db21lZHlcIiAgICAgICAgICAgICAgICAgICAgICAgXG4gIFs3XSBcIkFjdGlvbi9TY2llbmNlIGZpY3Rpb25cIiAgICAgICAgICAgICAgIFwiQWR2ZW50dXJlXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJBZHZlbnR1cmUtcm9tYW5jZVwiICAgICAgICAgICAgICAgICAgIFxuIFsxMF0gXCJBZHZlbnR1cmUvQ29tZWR5XCIgICAgICAgICAgICAgICAgICAgICBcIkFmdGVyc2hvdyAvIEludGVydmlld1wiICAgICAgICAgICAgICAgIFwiQW5pbWF0ZWQgbXVzaWNhbCBjb21lZHlcIiAgICAgICAgICAgICBcbiBbMTNdIFwiQW5pbWF0aW9uXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJBbmltYXRpb24gLyBDb21lZHlcIiAgICAgICAgICAgICAgICAgICBcIkFuaW1hdGlvbiAvIE11c2ljaWFsXCIgICAgICAgICAgICAgICAgXG4gWzE2XSBcIkFuaW1hdGlvbiAvIFNjaWVuY2UgRmljdGlvblwiICAgICAgICAgIFwiQW5pbWF0aW9uIC8gU2hvcnRcIiAgICAgICAgICAgICAgICAgICAgXCJBbmltYXRpb24vQ2hyaXN0bWFzL0NvbWVkeS9BZHZlbnR1cmVcIlxuIFsxOV0gXCJBbmltYXRpb24vQ29tZWR5L0FkdmVudHVyZVwiICAgICAgICAgICBcIkFuaW1hdGlvbi9NdXNpY2FsL0FkdmVudHVyZVwiICAgICAgICAgIFwiQW5pbWF0aW9uL1N1cGVyaGVyb1wiICAgICAgICAgICAgICAgICBcbiBbMjJdIFwiQW5pbWUgLyBTaG9ydFwiICAgICAgICAgICAgICAgICAgICAgICAgXCJBbmltZS9GYW50YXN5XCIgICAgICAgICAgICAgICAgICAgICAgICBcIkFuaW1lL1NjaWVuY2UgZmljdGlvblwiICAgICAgICAgICAgICAgXG4gWzI1XSBcIkFudGhvbG9neS9EYXJrIGNvbWVkeVwiICAgICAgICAgICAgICAgIFwiQmlvZ3JhcGhpY2FsL0NvbWVkeVwiICAgICAgICAgICAgICAgICAgXCJCaW9waWNcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFsyOF0gXCJCbGFjayBjb21lZHlcIiAgICAgICAgICAgICAgICAgICAgICAgICBcIkNocmlzdGlhbiBtdXNpY2FsXCIgICAgICAgICAgICAgICAgICAgIFwiQ2hyaXN0bWFzIGNvbWVkeVwiICAgICAgICAgICAgICAgICAgICBcbiBbMzFdIFwiQ2hyaXN0bWFzIG11c2ljYWxcIiAgICAgICAgICAgICAgICAgICAgXCJDaHJpc3RtYXMvRmFudGFzeS9BZHZlbnR1cmUvQ29tZWR5XCIgICBcIkNvbWVkeVwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gWzM0XSBcIkNvbWVkeS1kcmFtYVwiICAgICAgICAgICAgICAgICAgICAgICAgIFwiQ29tZWR5IC8gTXVzaWNhbFwiICAgICAgICAgICAgICAgICAgICAgXCJDb21lZHkgaG9ycm9yXCIgICAgICAgICAgICAgICAgICAgICAgIFxuIFszN10gXCJDb21lZHkgbXlzdGVyeVwiICAgICAgICAgICAgICAgICAgICAgICBcIkNvbWVkeS9GYW50YXN5L0ZhbWlseVwiICAgICAgICAgICAgICAgIFwiQ29tZWR5L0hvcnJvclwiICAgICAgICAgICAgICAgICAgICAgICBcbiBbNDBdIFwiQ29taW5nLW9mLWFnZSBjb21lZHktZHJhbWFcIiAgICAgICAgICAgXCJDb25jZXJ0IEZpbG1cIiAgICAgICAgICAgICAgICAgICAgICAgICBcIkNyaW1lIGRyYW1hXCIgICAgICAgICAgICAgICAgICAgICAgICAgXG4gWzQzXSBcIkNyaW1lIHRocmlsbGVyXCIgICAgICAgICAgICAgICAgICAgICAgIFwiRGFuY2UgY29tZWR5XCIgICAgICAgICAgICAgICAgICAgICAgICAgXCJEYXJrIGNvbWVkeVwiICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFs0Nl0gXCJEb2N1bWVudGFyeVwiICAgICAgICAgICAgICAgICAgICAgICAgICBcIkRyYW1hXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiRHJhbWEtQ29tZWR5XCIgICAgICAgICAgICAgICAgICAgICAgICBcbiBbNDldIFwiRHJhbWEgLyBTaG9ydFwiICAgICAgICAgICAgICAgICAgICAgICAgXCJEcmFtYS9Ib3Jyb3JcIiAgICAgICAgICAgICAgICAgICAgICAgICBcIkZhbWlseVwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gWzUyXSBcIkZhbWlseSBmaWxtXCIgICAgICAgICAgICAgICAgICAgICAgICAgIFwiRmFtaWx5L0NocmlzdG1hcyBtdXNpY2FsXCIgICAgICAgICAgICAgXCJGYW1pbHkvQ29tZWR5LWRyYW1hXCIgICAgICAgICAgICAgICAgIFxuIFs1NV0gXCJGYW50YXN5XCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkhlaXN0XCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiSGVpc3QgZmlsbS9UaHJpbGxlclwiICAgICAgICAgICAgICAgICBcbiBbNThdIFwiSGlkZGVuLWNhbWVyYSBwcmFuayBjb21lZHlcIiAgICAgICAgICAgXCJIaXN0b3JpY2FsLWVwaWNcIiAgICAgICAgICAgICAgICAgICAgICBcIkhpc3RvcmljYWwgZHJhbWFcIiAgICAgICAgICAgICAgICAgICAgXG4gWzYxXSBcIkhvcnJvclwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiSG9ycm9yLXRocmlsbGVyXCIgICAgICAgICAgICAgICAgICAgICAgXCJIb3Jyb3IgYW50aG9sb2d5XCIgICAgICAgICAgICAgICAgICAgIFxuIFs2NF0gXCJIb3Jyb3IgY29tZWR5XCIgICAgICAgICAgICAgICAgICAgICAgICBcIkhvcnJvciB0aHJpbGxlclwiICAgICAgICAgICAgICAgICAgICAgIFwiSG9ycm9yL0NyaW1lIGRyYW1hXCIgICAgICAgICAgICAgICAgICBcbiBbNjddIFwiTWFraW5nLW9mXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJNZW50YWxpc20gc3BlY2lhbFwiICAgICAgICAgICAgICAgICAgICBcIk1vY2t1bWVudGFyeVwiICAgICAgICAgICAgICAgICAgICAgICAgXG4gWzcwXSBcIk11c2ljYWxcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiTXVzaWNhbCAvIFNob3J0XCIgICAgICAgICAgICAgICAgICAgICAgXCJNdXNpY2FsIGNvbWVkeVwiICAgICAgICAgICAgICAgICAgICAgIFxuIFs3M10gXCJNdXNpY2FsL1dlc3Rlcm4vRmFudGFzeVwiICAgICAgICAgICAgICBcIk15c3RlcnlcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiT25lLW1hbiBzaG93XCIgICAgICAgICAgICAgICAgICAgICAgICBcbiBbNzZdIFwiUG9saXRpY2FsIHRocmlsbGVyXCIgICAgICAgICAgICAgICAgICAgXCJQc3ljaG9sb2dpY2FsIGhvcnJvclwiICAgICAgICAgICAgICAgICBcIlBzeWNob2xvZ2ljYWwgdGhyaWxsZXJcIiAgICAgICAgICAgICAgXG4gWzc5XSBcIlBzeWNob2xvZ2ljYWwgdGhyaWxsZXIgZHJhbWFcIiAgICAgICAgIFwiUm9tYW5jZVwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJSb21hbmNlIGRyYW1hXCIgICAgICAgICAgICAgICAgICAgICAgIFxuIFs4Ml0gXCJSb21hbnRpYyBjb21lZHlcIiAgICAgICAgICAgICAgICAgICAgICBcIlJvbWFudGljIGNvbWVkeS1kcmFtYVwiICAgICAgICAgICAgICAgIFwiUm9tYW50aWMgY29tZWR5L0hvbGlkYXlcIiAgICAgICAgICAgICBcbiBbODVdIFwiUm9tYW50aWMgZHJhbWFcIiAgICAgICAgICAgICAgICAgICAgICAgXCJSb21hbnRpYyB0ZWVuIGRyYW1hXCIgICAgICAgICAgICAgICAgICBcIlJvbWFudGljIHRlZW5hZ2UgZHJhbWFcIiAgICAgICAgICAgICAgXG4gWzg4XSBcIlJvbWFudGljIHRocmlsbGVyXCIgICAgICAgICAgICAgICAgICAgIFwiU2F0aXJlXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJTY2llbmNlIGZpY3Rpb25cIiAgICAgICAgICAgICAgICAgICAgIFxuIFs5MV0gXCJTY2llbmNlIGZpY3Rpb24gYWR2ZW50dXJlXCIgICAgICAgICAgICBcIlNjaWVuY2UgZmljdGlvbiB0aHJpbGxlclwiICAgICAgICAgICAgIFwiU2NpZW5jZSBmaWN0aW9uL0FjdGlvblwiICAgICAgICAgICAgICBcbiBbOTRdIFwiU2NpZW5jZSBmaWN0aW9uL0RyYW1hXCIgICAgICAgICAgICAgICAgXCJTY2llbmNlIGZpY3Rpb24vTXlzdGVyeVwiICAgICAgICAgICAgICBcIlNjaWVuY2UgZmljdGlvbi9UaHJpbGxlclwiICAgICAgICAgICAgXG4gWzk3XSBcIlNwb3J0cy1kcmFtYVwiICAgICAgICAgICAgICAgICAgICAgICAgIFwiU3BvcnRzIGZpbG1cIiAgICAgICAgICAgICAgICAgICAgICAgICAgXCJTcHkgdGhyaWxsZXJcIiAgICAgICAgICAgICAgICAgICAgICAgIFxuWzEwMF0gXCJTdG9wIE1vdGlvblwiICAgICAgICAgICAgICAgICAgICAgICAgICBcIlN1cGVyaGVyb1wiICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiU3VwZXJoZXJvLUNvbWVkeVwiICAgICAgICAgICAgICAgICAgICBcblsxMDNdIFwiU3VwZXJoZXJvL0FjdGlvblwiICAgICAgICAgICAgICAgICAgICAgXCJTdXBlcm5hdHVyYWwgZHJhbWFcIiAgICAgICAgICAgICAgICAgICBcIlRlZW4gY29tZWR5LWRyYW1hXCIgICAgICAgICAgICAgICAgICAgXG5bMTA2XSBcIlRlZW4gY29tZWR5IGhvcnJvclwiICAgICAgICAgICAgICAgICAgIFwiVGhyaWxsZXJcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJVcmJhbiBmYW50YXN5XCIgICAgICAgICAgICAgICAgICAgICAgIFxuWzEwOV0gXCJWYXJpZXR5IHNob3dcIiAgICAgICAgICAgICAgICAgICAgICAgICBcIlZhcmlldHkgU2hvd1wiICAgICAgICAgICAgICAgICAgICAgICAgIFwiV2FyXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcblsxMTJdIFwiV2FyLUNvbWVkeVwiICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJXYXIgZHJhbWFcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIldlc3Rlcm5cIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG5bMTE1XSBcIlpvbWJpZS9IZWlzdFwiICAgICAgICAgICAgICAgICAgICAgICAgXG4ifQ== -->
+<pre><code>  [1] &quot;Action&quot;                               &quot;Action-adventure&quot;                     &quot;Action-thriller&quot;                     
+  [4] &quot;Action comedy&quot;                        &quot;Action thriller&quot;                      &quot;Action/Comedy&quot;                       
+  [7] &quot;Action/Science fiction&quot;               &quot;Adventure&quot;                            &quot;Adventure-romance&quot;                   
+ [10] &quot;Adventure/Comedy&quot;                     &quot;Aftershow / Interview&quot;                &quot;Animated musical comedy&quot;             
+ [13] &quot;Animation&quot;                            &quot;Animation / Comedy&quot;                   &quot;Animation / Musicial&quot;                
+ [16] &quot;Animation / Science Fiction&quot;          &quot;Animation / Short&quot;                    &quot;Animation/Christmas/Comedy/Adventure&quot;
+ [19] &quot;Animation/Comedy/Adventure&quot;           &quot;Animation/Musical/Adventure&quot;          &quot;Animation/Superhero&quot;                 
+ [22] &quot;Anime / Short&quot;                        &quot;Anime/Fantasy&quot;                        &quot;Anime/Science fiction&quot;               
+ [25] &quot;Anthology/Dark comedy&quot;                &quot;Biographical/Comedy&quot;                  &quot;Biopic&quot;                              
+ [28] &quot;Black comedy&quot;                         &quot;Christian musical&quot;                    &quot;Christmas comedy&quot;                    
+ [31] &quot;Christmas musical&quot;                    &quot;Christmas/Fantasy/Adventure/Comedy&quot;   &quot;Comedy&quot;                              
+ [34] &quot;Comedy-drama&quot;                         &quot;Comedy / Musical&quot;                     &quot;Comedy horror&quot;                       
+ [37] &quot;Comedy mystery&quot;                       &quot;Comedy/Fantasy/Family&quot;                &quot;Comedy/Horror&quot;                       
+ [40] &quot;Coming-of-age comedy-drama&quot;           &quot;Concert Film&quot;                         &quot;Crime drama&quot;                         
+ [43] &quot;Crime thriller&quot;                       &quot;Dance comedy&quot;                         &quot;Dark comedy&quot;                         
+ [46] &quot;Documentary&quot;                          &quot;Drama&quot;                                &quot;Drama-Comedy&quot;                        
+ [49] &quot;Drama / Short&quot;                        &quot;Drama/Horror&quot;                         &quot;Family&quot;                              
+ [52] &quot;Family film&quot;                          &quot;Family/Christmas musical&quot;             &quot;Family/Comedy-drama&quot;                 
+ [55] &quot;Fantasy&quot;                              &quot;Heist&quot;                                &quot;Heist film/Thriller&quot;                 
+ [58] &quot;Hidden-camera prank comedy&quot;           &quot;Historical-epic&quot;                      &quot;Historical drama&quot;                    
+ [61] &quot;Horror&quot;                               &quot;Horror-thriller&quot;                      &quot;Horror anthology&quot;                    
+ [64] &quot;Horror comedy&quot;                        &quot;Horror thriller&quot;                      &quot;Horror/Crime drama&quot;                  
+ [67] &quot;Making-of&quot;                            &quot;Mentalism special&quot;                    &quot;Mockumentary&quot;                        
+ [70] &quot;Musical&quot;                              &quot;Musical / Short&quot;                      &quot;Musical comedy&quot;                      
+ [73] &quot;Musical/Western/Fantasy&quot;              &quot;Mystery&quot;                              &quot;One-man show&quot;                        
+ [76] &quot;Political thriller&quot;                   &quot;Psychological horror&quot;                 &quot;Psychological thriller&quot;              
+ [79] &quot;Psychological thriller drama&quot;         &quot;Romance&quot;                              &quot;Romance drama&quot;                       
+ [82] &quot;Romantic comedy&quot;                      &quot;Romantic comedy-drama&quot;                &quot;Romantic comedy/Holiday&quot;             
+ [85] &quot;Romantic drama&quot;                       &quot;Romantic teen drama&quot;                  &quot;Romantic teenage drama&quot;              
+ [88] &quot;Romantic thriller&quot;                    &quot;Satire&quot;                               &quot;Science fiction&quot;                     
+ [91] &quot;Science fiction adventure&quot;            &quot;Science fiction thriller&quot;             &quot;Science fiction/Action&quot;              
+ [94] &quot;Science fiction/Drama&quot;                &quot;Science fiction/Mystery&quot;              &quot;Science fiction/Thriller&quot;            
+ [97] &quot;Sports-drama&quot;                         &quot;Sports film&quot;                          &quot;Spy thriller&quot;                        
+[100] &quot;Stop Motion&quot;                          &quot;Superhero&quot;                            &quot;Superhero-Comedy&quot;                    
+[103] &quot;Superhero/Action&quot;                     &quot;Supernatural drama&quot;                   &quot;Teen comedy-drama&quot;                   
+[106] &quot;Teen comedy horror&quot;                   &quot;Thriller&quot;                             &quot;Urban fantasy&quot;                       
+[109] &quot;Variety show&quot;                         &quot;Variety Show&quot;                         &quot;War&quot;                                 
+[112] &quot;War-Comedy&quot;                           &quot;War drama&quot;                            &quot;Western&quot;                             
+[115] &quot;Zombie/Heist&quot;                        </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The above output displays the levels in the Genre factor. The Genre variable displays the various categorical types of genre and the Languages variable shows the languages offered in the Netflix show. Therefore, it would be appropriate for these two variables to be factors instead of characters.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEluc3BlY3Qgc3RydWN0dXJlIG9mIGRhdGEgYWZ0ZXIgY29udmVyc2lvbnNcbnN0cihuZXRmbGl4KVxuYGBgIn0= -->
+<pre class="r"><code>
+# Inspect structure of data after conversions
+str(netflix)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoic3BlY190YmxfZGYgWzU4NCB4IDZdIChTMzogc3BlY190YmxfZGYvdGJsX2RmL3RibC9kYXRhLmZyYW1lKVxuICQgVGl0bGUgICAgIDogY2hyIFsxOjU4NF0gXCJFbnRlciB0aGUgQW5pbWVcIiBcIkRhcmsgRm9yY2VzXCIgXCJUaGUgQXBwXCIgXCJUaGUgT3BlbiBIb3VzZVwiIC4uLlxuICQgR2VucmUgICAgIDogRmFjdG9yIHcvIDExNSBsZXZlbHMgXCJBY3Rpb25cIixcIkFjdGlvbi1hZHZlbnR1cmVcIiwuLjogNDYgMTA3IDk0IDY1IDc0IDEgMzMgNTcgNzMgMzMgLi4uXG4gJCBQcmVtaWVyZSAgOiBEYXRlWzE6NTg0XSwgZm9ybWF0OiBcIjIwMTktMDgtMDVcIiBcIjIwMjAtMDgtMjFcIiBcIjIwMTktMTItMjZcIiBcIjIwMTgtMDEtMTlcIiAuLi5cbiAkIFJ1bnRpbWUgICA6IGludCBbMTo1ODRdIDU4IDgxIDc5IDk0IDkwIDE0NyAxMTIgMTQ5IDczIDEzOSAuLi5cbiAkIElNREIgU2NvcmU6IG51bSBbMTo1ODRdIDIuNSAyLjYgMi42IDMuMiAzLjQgMy41IDMuNyAzLjcgMy45IDQuMSAuLi5cbiAkIExhbmd1YWdlICA6IEZhY3RvciB3LyAzOCBsZXZlbHMgXCJCZW5nYWxpXCIsXCJEdXRjaFwiLC4uOiA3IDMwIDIxIDMgMTkgMTkgMzggMyAzIDE5IC4uLlxuIC0gYXR0cigqLCBcInNwZWNcIik9XG4gIC4uIGNvbHMoXG4gIC4uICAgVGl0bGUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIC4uICAgR2VucmUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIC4uICAgUHJlbWllcmUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIC4uICAgUnVudGltZSA9IGNvbF9kb3VibGUoKSxcbiAgLi4gICBgSU1EQiBTY29yZWAgPSBjb2xfZG91YmxlKCksXG4gIC4uICAgTGFuZ3VhZ2UgPSBjb2xfY2hhcmFjdGVyKClcbiAgLi4gKVxuIC0gYXR0cigqLCBcInByb2JsZW1zXCIpPTxleHRlcm5hbHB0cj4gXG4ifQ== -->
 <pre><code>spec_tbl_df [584 x 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
  $ Title     : chr [1:584] &quot;Enter the Anime&quot; &quot;Dark Forces&quot; &quot;The App&quot; &quot;The Open House&quot; ...
- $ Genre     : chr [1:584] &quot;Documentary&quot; &quot;Thriller&quot; &quot;Science fiction/Drama&quot; &quot;Horror thriller&quot; ...
+ $ Genre     : Factor w/ 115 levels &quot;Action&quot;,&quot;Action-adventure&quot;,..: 46 107 94 65 74 1 33 57 73 33 ...
  $ Premiere  : Date[1:584], format: &quot;2019-08-05&quot; &quot;2020-08-21&quot; &quot;2019-12-26&quot; &quot;2018-01-19&quot; ...
  $ Runtime   : int [1:584] 58 81 79 94 90 147 112 149 73 139 ...
  $ IMDB Score: num [1:584] 2.5 2.6 2.6 3.2 3.4 3.5 3.7 3.7 3.9 4.1 ...
- $ Language  : chr [1:584] &quot;English/Japanese&quot; &quot;Spanish&quot; &quot;Italian&quot; &quot;English&quot; ...
+ $ Language  : Factor w/ 38 levels &quot;Bengali&quot;,&quot;Dutch&quot;,..: 7 30 21 3 19 19 38 3 3 19 ...
  - attr(*, &quot;spec&quot;)=
   .. cols(
   ..   Title = col_character(),
@@ -417,21 +469,81 @@ str(netflix)
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>From the above output, it can be seen that the data types for the Premiere and Runtime column has been changed to Date and Integer respectively.</p>
+<p>From the above output, it can be seen that the data types for the Premiere and Runtime column has been changed to Date and Integer respectively. The Genre and Language variables have been converted to factors as well.</p>
 </div>
 <div id="subsetting" class="section level2">
 <h2><strong>Subsetting</strong></h2>
 <!-- Subset the data frame using the first 10 observations (include all variables). Then convert it to a matrix. Check the structure of that matrix (i.e. check whether the matrix is a character, numeric, integer, factor, or logical) and explain in a few words why you ended up with that structure. Provide the R codes with outputs and explain everything that you do in this step. -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN1YnNldCB5b3VyIGRhdGEgYW5kIGNvbnZlcnQgaXQgdG8gYSBtYXRyaXgsIHByb3ZpZGUgUiBjb2RlcyBoZXJlLlxuXG5cbmBgYCJ9 -->
-<pre class="r"><code>
-# Subset your data and convert it to a matrix, provide R codes here.
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDaGVjayBtYXRyaXhcbm5ldGZsaXhfbXhcblxuYGBgIn0= -->
+<pre class="r"><code># Check matrix
+netflix_mx
 </code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgVGl0bGUgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEdlbnJlICAgICAgICAgICAgICAgICAgICAgUHJlbWllcmUgICAgIFJ1bnRpbWUgSU1EQiBTY29yZSBMYW5ndWFnZSAgICAgICAgICBcbk1vdmllIDEgIFwiRW50ZXIgdGhlIEFuaW1lXCIgICAgICAgICAgICAgICAgIFwiRG9jdW1lbnRhcnlcIiAgICAgICAgICAgICBcIjIwMTktMDgtMDVcIiBcIiA1OFwiICAgXCIyLjVcIiAgICAgIFwiRW5nbGlzaC9KYXBhbmVzZVwiXG5Nb3ZpZSAyICBcIkRhcmsgRm9yY2VzXCIgICAgICAgICAgICAgICAgICAgICBcIlRocmlsbGVyXCIgICAgICAgICAgICAgICAgXCIyMDIwLTA4LTIxXCIgXCIgODFcIiAgIFwiMi42XCIgICAgICBcIlNwYW5pc2hcIiAgICAgICAgIFxuTW92aWUgMyAgXCJUaGUgQXBwXCIgICAgICAgICAgICAgICAgICAgICAgICAgXCJTY2llbmNlIGZpY3Rpb24vRHJhbWFcIiAgIFwiMjAxOS0xMi0yNlwiIFwiIDc5XCIgICBcIjIuNlwiICAgICAgXCJJdGFsaWFuXCIgICAgICAgICBcbk1vdmllIDQgIFwiVGhlIE9wZW4gSG91c2VcIiAgICAgICAgICAgICAgICAgIFwiSG9ycm9yIHRocmlsbGVyXCIgICAgICAgICBcIjIwMTgtMDEtMTlcIiBcIiA5NFwiICAgXCIzLjJcIiAgICAgIFwiRW5nbGlzaFwiICAgICAgICAgXG5Nb3ZpZSA1ICBcIkthYWxpIEtodWhpXCIgICAgICAgICAgICAgICAgICAgICBcIk15c3RlcnlcIiAgICAgICAgICAgICAgICAgXCIyMDIwLTEwLTMwXCIgXCIgOTBcIiAgIFwiMy40XCIgICAgICBcIkhpbmRpXCIgICAgICAgICAgIFxuTW92aWUgNiAgXCJEcml2ZVwiICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJBY3Rpb25cIiAgICAgICAgICAgICAgICAgIFwiMjAxOS0xMS0wMVwiIFwiMTQ3XCIgICBcIjMuNVwiICAgICAgXCJIaW5kaVwiICAgICAgICAgICBcbk1vdmllIDcgIFwiTGV5bGEgRXZlcmxhc3RpbmdcIiAgICAgICAgICAgICAgIFwiQ29tZWR5XCIgICAgICAgICAgICAgICAgICBcIjIwMjAtMTItMDRcIiBcIjExMlwiICAgXCIzLjdcIiAgICAgIFwiVHVya2lzaFwiICAgICAgICAgXG5Nb3ZpZSA4ICBcIlRoZSBMYXN0IERheXMgb2YgQW1lcmljYW4gQ3JpbWVcIiBcIkhlaXN0IGZpbG0vVGhyaWxsZXJcIiAgICAgXCIyMDIwLTA2LTA1XCIgXCIxNDlcIiAgIFwiMy43XCIgICAgICBcIkVuZ2xpc2hcIiAgICAgICAgIFxuTW92aWUgOSAgXCJQYXJhZG94XCIgICAgICAgICAgICAgICAgICAgICAgICAgXCJNdXNpY2FsL1dlc3Rlcm4vRmFudGFzeVwiIFwiMjAxOC0wMy0yM1wiIFwiIDczXCIgICBcIjMuOVwiICAgICAgXCJFbmdsaXNoXCIgICAgICAgICBcbk1vdmllIDEwIFwiU2FyZGFyIEthIEdyYW5kc29uXCIgICAgICAgICAgICAgIFwiQ29tZWR5XCIgICAgICAgICAgICAgICAgICBcIjIwMjEtMDUtMThcIiBcIjEzOVwiICAgXCI0LjFcIiAgICAgIFwiSGluZGlcIiAgICAgICAgICAgXG4ifQ== -->
+<pre><code>         Title                             Genre                     Premiere     Runtime IMDB Score Language          
+Movie 1  &quot;Enter the Anime&quot;                 &quot;Documentary&quot;             &quot;2019-08-05&quot; &quot; 58&quot;   &quot;2.5&quot;      &quot;English/Japanese&quot;
+Movie 2  &quot;Dark Forces&quot;                     &quot;Thriller&quot;                &quot;2020-08-21&quot; &quot; 81&quot;   &quot;2.6&quot;      &quot;Spanish&quot;         
+Movie 3  &quot;The App&quot;                         &quot;Science fiction/Drama&quot;   &quot;2019-12-26&quot; &quot; 79&quot;   &quot;2.6&quot;      &quot;Italian&quot;         
+Movie 4  &quot;The Open House&quot;                  &quot;Horror thriller&quot;         &quot;2018-01-19&quot; &quot; 94&quot;   &quot;3.2&quot;      &quot;English&quot;         
+Movie 5  &quot;Kaali Khuhi&quot;                     &quot;Mystery&quot;                 &quot;2020-10-30&quot; &quot; 90&quot;   &quot;3.4&quot;      &quot;Hindi&quot;           
+Movie 6  &quot;Drive&quot;                           &quot;Action&quot;                  &quot;2019-11-01&quot; &quot;147&quot;   &quot;3.5&quot;      &quot;Hindi&quot;           
+Movie 7  &quot;Leyla Everlasting&quot;               &quot;Comedy&quot;                  &quot;2020-12-04&quot; &quot;112&quot;   &quot;3.7&quot;      &quot;Turkish&quot;         
+Movie 8  &quot;The Last Days of American Crime&quot; &quot;Heist film/Thriller&quot;     &quot;2020-06-05&quot; &quot;149&quot;   &quot;3.7&quot;      &quot;English&quot;         
+Movie 9  &quot;Paradox&quot;                         &quot;Musical/Western/Fantasy&quot; &quot;2018-03-23&quot; &quot; 73&quot;   &quot;3.9&quot;      &quot;English&quot;         
+Movie 10 &quot;Sardar Ka Grandson&quot;              &quot;Comedy&quot;                  &quot;2021-05-18&quot; &quot;139&quot;   &quot;4.1&quot;      &quot;Hindi&quot;           </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Provide explanations here.</p>
+<p>The above code subsets the original tibble to just the first 10 observations along with all their respective column variables. The tibble is then converted into a matrix and assigned row names. Column names were not assigned as the original column names act as the column names. The output of the matrix is also displayed above.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmV0ZmxpeF9teFtcIk1vdmllIDhcIiwgXCJHZW5yZVwiXVxuXG5gYGAifQ== -->
+<pre class="r"><code>netflix_mx[&quot;Movie 8&quot;, &quot;Genre&quot;]
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiSGVpc3QgZmlsbS9UaHJpbGxlclwiXG4ifQ== -->
+<pre><code>[1] &quot;Heist film/Thriller&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Each element of the matrix can be retrieved by indexing their respective row and column names as shown in the above code.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cmlidXRlcyhuZXRmbGl4X214KVxuXG5gYGAifQ== -->
+<pre class="r"><code>attributes(netflix_mx)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJGRpbVxuWzFdIDEwICA2XG5cbiRkaW1uYW1lc1xuJGRpbW5hbWVzW1sxXV1cbiBbMV0gXCJNb3ZpZSAxXCIgIFwiTW92aWUgMlwiICBcIk1vdmllIDNcIiAgXCJNb3ZpZSA0XCIgIFwiTW92aWUgNVwiICBcIk1vdmllIDZcIiAgXCJNb3ZpZSA3XCIgIFwiTW92aWUgOFwiICBcIk1vdmllIDlcIiAgXCJNb3ZpZSAxMFwiXG5cbiRkaW1uYW1lc1tbMl1dXG5bMV0gXCJUaXRsZVwiICAgICAgXCJHZW5yZVwiICAgICAgXCJQcmVtaWVyZVwiICAgXCJSdW50aW1lXCIgICAgXCJJTURCIFNjb3JlXCIgXCJMYW5ndWFnZVwiICBcbiJ9 -->
+<pre><code>$dim
+[1] 10  6
+
+$dimnames
+$dimnames[[1]]
+ [1] &quot;Movie 1&quot;  &quot;Movie 2&quot;  &quot;Movie 3&quot;  &quot;Movie 4&quot;  &quot;Movie 5&quot;  &quot;Movie 6&quot;  &quot;Movie 7&quot;  &quot;Movie 8&quot;  &quot;Movie 9&quot;  &quot;Movie 10&quot;
+
+$dimnames[[2]]
+[1] &quot;Title&quot;      &quot;Genre&quot;      &quot;Premiere&quot;   &quot;Runtime&quot;    &quot;IMDB Score&quot; &quot;Language&quot;  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The underlying structure of this matrix is shown using the attributes() function. The number of rows and columns are displayed along with all the assigned row and column names.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKG5ldGZsaXhfbXgpXG5cbmBgYCJ9 -->
+<pre class="r"><code>str(netflix_mx)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIGNociBbMToxMCwgMTo2XSBcIkVudGVyIHRoZSBBbmltZVwiIFwiRGFyayBGb3JjZXNcIiBcIlRoZSBBcHBcIiBcIlRoZSBPcGVuIEhvdXNlXCIgXCJLYWFsaSBLaHVoaVwiIFwiRHJpdmVcIiBcIkxleWxhIEV2ZXJsYXN0aW5nXCIgLi4uXG4gLSBhdHRyKCosIFwiZGltbmFtZXNcIik9TGlzdCBvZiAyXG4gIC4uJCA6IGNociBbMToxMF0gXCJNb3ZpZSAxXCIgXCJNb3ZpZSAyXCIgXCJNb3ZpZSAzXCIgXCJNb3ZpZSA0XCIgLi4uXG4gIC4uJCA6IGNociBbMTo2XSBcIlRpdGxlXCIgXCJHZW5yZVwiIFwiUHJlbWllcmVcIiBcIlJ1bnRpbWVcIiAuLi5cbiJ9 -->
+<pre><code> chr [1:10, 1:6] &quot;Enter the Anime&quot; &quot;Dark Forces&quot; &quot;The App&quot; &quot;The Open House&quot; &quot;Kaali Khuhi&quot; &quot;Drive&quot; &quot;Leyla Everlasting&quot; ...
+ - attr(*, &quot;dimnames&quot;)=List of 2
+  ..$ : chr [1:10] &quot;Movie 1&quot; &quot;Movie 2&quot; &quot;Movie 3&quot; &quot;Movie 4&quot; ...
+  ..$ : chr [1:6] &quot;Title&quot; &quot;Genre&quot; &quot;Premiere&quot; &quot;Runtime&quot; ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>By checking the structure of the matrix, it can be seen that the data types of each element is a character. This is because all elements that exist within a matrix must be of same class, in this case they are all stored as characters.</p>
 </div>
 <div id="create-a-new-data-frame" class="section level2">
 <h2><strong>Create a new Data Frame</strong></h2>
@@ -457,7 +569,7 @@ str(netflix)
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRhdGEgV3JhbmdsaW5nIChEYXRhIFByZXByb2Nlc3NpbmcpIg0KYXV0aG9yOiAiSmVyZW15IEppYW4gWmhpIENoaWEiDQpzdWJ0aXRsZTogUHJhY3RpY2FsIGFzc2Vzc21lbnQgMQ0KZGF0ZTogIjExLzA4LzIwMjEiDQpvdXRwdXQ6DQogIGh0bWxfZG9jdW1lbnQ6DQogICAgZGZfcHJpbnQ6IHBhZ2VkDQogIHBkZl9kb2N1bWVudDogZGVmYXVsdA0KICBodG1sX25vdGVib29rOiBkZWZhdWx0DQotLS0NCg0KDQojIyAqKlNldHVwKioNCg0KYGBge3J9DQoNCiMgTG9hZCB0aGUgbmVjZXNzYXJ5IHBhY2thZ2VzIHJlcXVpcmVkIHRvIHJlcHJvZHVjZSB0aGUgcmVwb3J0LiBGb3IgZXhhbXBsZToNCg0KbGlicmFyeShrYWJsZUV4dHJhKQ0KbGlicmFyeShtYWdyaXR0cikNCmxpYnJhcnkoZHBseXIpDQpsaWJyYXJ5KHJlYWRyKQ0KbGlicmFyeSh0aWR5cikNCmxpYnJhcnkoa25pdHIpDQoNCg0KYGBgDQoNCg0KIyMgKipTdHVkZW50IG5hbWVzLCBudW1iZXJzIGFuZCBwZXJjZW50YWdlIG9mIGNvbnRyaWJ1dGlvbnMqKg0KYGBge3IsIGVjaG89RkFMU0V9DQoNCiMgQWRkIHlvdXIgbmFtZXMsIG51bWJlcnMgYW5kIHBlcmNlbnRhZ2Ugb2YgeW91ciBjb250cmlidXRpb24gaGVyZS4NCg0KbmE8LSBjKCJKZXJlbXkgSmlhbiBaaGkgQ2hpYSIpDQpubzwtIGMoIjM5MTc1MTUiKQ0KcGM8LSBjKCIxMDAlIikNCg0KczwtIGRhdGEuZnJhbWUoY2JpbmQobmEsbm8scGMpKQ0KY29sbmFtZXMocyk8LSBjKCJTdHVkZW50IG5hbWUiLCAiU3R1ZGVudCBudW1iZXIiLCAiUGVyY2VudGFnZSBvZiBjb250cmlidXRpb24iKQ0KDQpzICU+JSBrYmwoY2FwdGlvbiA9ICJHcm91cCBpbmZvcm1hdGlvbiIpICU+JQ0KICBrYWJsZV9jbGFzc2ljKGZ1bGxfd2lkdGggPSBGLCBodG1sX2ZvbnQgPSAiQ2FtYnJpYSIpDQoNCg0KDQoNCmBgYA0KDQojIyAqKkRhdGEgRGVzY3JpcHRpb24qKg0KDQoqIFRoaXMgZGF0YXNldCBjb25zaXN0cyBvZiBhbGwgTmV0ZmxpeCBvcmlnaW5hbCBmaWxtcywgZG9jdW1lbnRhcmllcyBhbmQgc3BlY2lhbHMgcmVsZWFzZWQgYXMgb2YgSnVuZSAxc3QsIDIwMjEuDQoqIFRoZSBjcmVhdG9yIG9mIHRoaXMgZGF0YXNldCB3ZWIgc2NyYXBlZCB0aGUgZGF0YSBmcm9tIFdpa2lwZWRpYSBhbmQgaW50ZWdyYXRlZCBpdCB3aXRoIGFub3RoZXIgZGF0YXNldCBjb25zaXN0aW5nIG9mIGFsbCB0aGVpciBjb3JyZXNwb25kaW5nIElNREIgc2NvcmVzLg0KKiBVUkwgb2YgZGF0YXNldDogaHR0cHM6Ly93d3cua2FnZ2xlLmNvbS9sdWlzY29ydGVyL25ldGZsaXgtb3JpZ2luYWwtZmlsbXMtaW1kYi1zY29yZXMvdmVyc2lvbi8xDQoNCiMjIyAqKlZhcmlhYmxlcyBvZiBEYXRhc2V0KioNCg0KKiBUaXRsZSBvZiB0aGUgRmlsbQ0KKiBHZW5yZSBvZiB0aGUgRmlsbQ0KKiBPcmlnaW5hbCBQcmVtaWVyZSBEYXRlDQoqIFJ1bnRpbWUgKE1pbnV0ZXMpDQoqIElNREIgU2NvcmVzIChhcyBvZiAwMS8wNi8yMDIxKQ0KKiBMYW5ndWFnZXMgY3VycmVudGx5IEF2YWlsYWJsZSAoYXMgb2YgMDEvMDYvMjAyMSkNCg0KIyMgKipSZWFkL0ltcG9ydCBEYXRhKioNCg0KPCEtLSBSZWFkL0ltcG9ydCB0aGUgZGF0YSBpbnRvIFIsIHRoZW4gc2F2ZSBpdCBhcyBhIGRhdGEgZnJhbWUuIFlvdSBjYW4gdXNlIEJhc2UgUiBmdW5jdGlvbnMgb3IgcmVhZHIsIHhsc3gsIHJlYWR4bCwgZm9yZWlnbiwgcnZlc3QgcGFja2FnZXMgZm9yIHRoaXMgcHVycG9zZS4gSW4gdGhpcyBzdGVwLCB5b3UgbXVzdCBwcm92aWRlIHRoZSBSIGNvZGVzIHdpdGggb3V0cHV0cyAoaS5lLiBoZWFkIG9mIGRhdGEgc2V0KSBhbmQgZXhwbGFpbiBldmVyeXRoaW5nIHRoYXQgeW91IGRvIGluIG9yZGVyIHRvIGltcG9ydC9yZWFkL3NjcmFwZSB0aGUgZGF0YSBzZXQuIFlvdSBjYW4gcHJvdmlkZSB0aGUgUiBjb2RlcyB3aXRoIG91dHB1dHMgdXNpbmcgUiBjaHVua3MgbGlrZSB0aGlzOiAtLT4NCg0KYGBge3J9DQoNCiMgSW1wb3J0IGRhdGFzZXQNCm5ldGZsaXggPC0gcmVhZF9jc3YoIk5ldGZsaXhPcmlnaW5hbHMuY3N2IikNCg0KIyBDaGVjayBmaXJzdCBmZXcgcm93cyBvZiBpbXBvcnRlZCBkYXRhc2V0DQpoZWFkKG5ldGZsaXgpDQoNCmBgYA0KDQpUaGUgZGF0YXNldCBpcyBpbXBvcnRlZCB1c2luZyByZWFkcidzIHJlYWRfY3N2KCkgZnVuY3Rpb24uIFRoZSBpbXBvcnRlZCBkYXRhc2V0IGhhcyBhIGRhdGEgc3RydWN0dXJlIG9mIGEgdGliYmxlLiBUaGUgY29sdW1ucyBhbmQgZmlyc3QgZmV3IHJvd3Mgb2YgdGhlIGRhdGFzZXQgaXMgdGhlbiBpbnNwZWN0ZWQgdXNpbmcgUidzIGJhc2UgZnVuY3Rpb24gaGVhZCgpLg0KDQojIyAqKkluc3BlY3QgYW5kIFVuZGVyc3RhbmQqKg0KDQoNCmBgYHtyfQ0KDQojIEluc3BlY3Qgc3RydWN0dXJlIG9mIGRhdGENCnN0cihuZXRmbGl4KQ0KDQpgYGANCg0KVGhlIG91dHB1dCBhYm92ZSBkaXNwbGF5cyBhbGwgdGhlIHZhcmlhYmxlcyBhbmQgdGhlaXIgZGF0YSB0eXBlcy4gVGhlIFRpdGxlLCBHZW5yZSwgUHJlbWllcmUgYW5kIExhbmd1YWdlIGNvbHVtbnMgYXJlIGRldGVjdGVkIGJ5IFIgYXMgY2hhcmFjdGVycyBhcyB0aGV5IGNvbnRhaW4gc3RyaW5ncyBpbiB0aGUgb2JzZXJ2YXRpb25zLiBSdW50aW1lIGFuZCBJTURCIFNjb3JlIGNvbHVtbnMgYXJlIGRldGVjdGVkIGFzIG51bWVyaWNhbCBkYXRhIGFzIHRoZXkgY29udGFpbiBudW1iZXJzIHdpdGhpbiB0aGUgZGF0YS4NCg0KYGBge3J9DQoNCiMgQ29udmVydCBwcmVtaWVyZSBjb2x1bW4ncyBkYXRhIHR5cGUNCm5ldGZsaXgkUHJlbWllcmUgPC0gYXMuRGF0ZShuZXRmbGl4JFByZW1pZXJlLCBmb3JtYXQgPSIlQiAlZCwgJVkiKQ0KaGVhZChuZXRmbGl4JFByZW1pZXJlKQ0KDQpgYGANClRoZSBQcmVtaWVyZSBjb2x1bW4gd2FzIGluaXRpYWxseSByZWNvZ25pc2VkIGFzIGEgY2hhcmFjdGVyIGRhdGEgdHlwZS4gVGhlIGFib3ZlIGNvZGUgY29udmVydHMgdGhpcyBjaGFyYWN0ZXIgaW50byBhIGRhdGUgZm9ybWF0LCB3aGljaCBhbGxvd3MgZm9yIGFueSB0aW1lLXNlcmllcyBhbmFseXNpcyB0byBiZSBkb25lIGlmIG5lZWRlZC4NCg0KYGBge3J9DQoNCiMgQ29udmVydCBSdW50aW1lIGNvbHVtbidzIGRhdGEgdHlwZQ0KbmV0ZmxpeCRSdW50aW1lIDwtIGFzLmludGVnZXIobmV0ZmxpeCRSdW50aW1lKQ0KY2xhc3MobmV0ZmxpeCRSdW50aW1lKQ0KDQpgYGANCkFzIHRoZSB2YWx1ZXMgaW4gdGhlIFJ1bnRpbWUgY29sdW1uIG9ubHkgdGFrZSBpbnRlZ2VycyBhbmQgbm90IHZhbHVlcyB3aXRoIGRlY2ltYWxzLCBpdCBpcyB0aGVuIGNvbnZlcnRlZCBmcm9tIGEgZG91YmxlIHZhcmlhYmxlIGludG8gYW4gaW50ZWdlci4NCg0KYGBge3J9DQoNCiMgSW5zcGVjdCBzdHJ1Y3R1cmUgb2YgZGF0YSBhZnRlciBjb252ZXJzaW9ucw0Kc3RyKG5ldGZsaXgpDQoNCmBgYA0KRnJvbSB0aGUgYWJvdmUgb3V0cHV0LCBpdCBjYW4gYmUgc2VlbiB0aGF0IHRoZSBkYXRhIHR5cGVzIGZvciB0aGUgUHJlbWllcmUgYW5kIFJ1bnRpbWUgY29sdW1uIGhhcyBiZWVuIGNoYW5nZWQgdG8gRGF0ZSBhbmQgSW50ZWdlciByZXNwZWN0aXZlbHkuDQoNCiMjICoqU3Vic2V0dGluZyoqIA0KDQo8IS0tIFN1YnNldCB0aGUgZGF0YSBmcmFtZSB1c2luZyB0aGUgZmlyc3QgMTAgb2JzZXJ2YXRpb25zIChpbmNsdWRlIGFsbCB2YXJpYWJsZXMpLiBUaGVuIGNvbnZlcnQgaXQgdG8gYSBtYXRyaXguIENoZWNrIHRoZSBzdHJ1Y3R1cmUgb2YgdGhhdCBtYXRyaXggKGkuZS4gY2hlY2sgd2hldGhlciB0aGUgbWF0cml4IGlzIGEgY2hhcmFjdGVyLCBudW1lcmljLCBpbnRlZ2VyLCBmYWN0b3IsIG9yIGxvZ2ljYWwpIGFuZCBleHBsYWluIGluIGEgZmV3IHdvcmRzIHdoeSB5b3UgZW5kZWQgdXAgd2l0aCB0aGF0IHN0cnVjdHVyZS4gUHJvdmlkZSB0aGUgUiBjb2RlcyB3aXRoIG91dHB1dHMgYW5kIGV4cGxhaW4gZXZlcnl0aGluZyB0aGF0IHlvdSBkbyBpbiB0aGlzIHN0ZXAuIC0tPg0KDQoNCg0KYGBge3J9DQoNCiMgU3Vic2V0IHlvdXIgZGF0YSBhbmQgY29udmVydCBpdCB0byBhIG1hdHJpeCwgcHJvdmlkZSBSIGNvZGVzIGhlcmUuDQoNCg0KYGBgDQoNClByb3ZpZGUgZXhwbGFuYXRpb25zIGhlcmUuDQoNCg0KIyMgKipDcmVhdGUgYSBuZXcgRGF0YSBGcmFtZSoqDQoNCjwhLS0gWW91IHdpbGwgY3JlYXRlIGEgbmV3IGRhdGEgZnJhbWUgZnJvbSBzY3JhdGNoLiBOb3RlIHRoYXQsIHRoaXMgc3RlcCBpcyBpbmRlcGVuZGVudCBmcm9tIHRoZSBkYXRhc2V0IHRoYXQgeW91IHVzZWQgaW4gdGhlIHByZXZpb3VzIHN0ZXBzLiAgLS0+DQoNCjwhLS0gSW4gdGhpcyBzdGVwIHlvdSBzaG91bGQ6IC0tPg0KDQo8IS0tICogQ3JlYXRlIGEgZGF0YSBmcmFtZSBmcm9tIHNjcmF0Y2ggd2l0aCAyIHZhcmlhYmxlcyBhbmQgMTAgb2JzZXJ2YXRpb25zLiBZb3VyIGRhdGEgZnJhbWUgaGFzIHRvIGNvbnRhaW4gb25lIGludGVnZXIgdmFyaWFibGUgYW5kIG9uZSBvcmRpbmFsIHZhcmlhYmxlLiBNYWtlIHN1cmUgdGhhdCB5b3UgZmFjdG9yaXNlZCBhbmQgb3JkZXJlZCB0aGUgb3JkaW5hbCB2YXJpYWJsZSBwcm9wZXJseS4gU2hvdyB0aGUgc3RydWN0dXJlIG9mIHlvdXIgdmFyaWFibGVzIGFuZCB0aGUgbGV2ZWxzIG9mIHRoZSBvcmRpbmFsIHZhcmlhYmxlLiAtLT4NCg0KPCEtLSAqIENyZWF0ZSBhbm90aGVyIG51bWVyaWMgdmVjdG9yIGFuZCB1c2UgY2JpbmQoKSB0byBhZGQgdGhpcyB2ZWN0b3IgdG8geW91ciBkYXRhIGZyYW1lLiBBZnRlciB0aGlzIHN0ZXAgeW91IHNob3VsZCBoYXZlIDMgdmFyaWFibGVzIGluIHRoZSBkYXRhIGZyYW1lLiAgLS0+DQoNCg0KPCEtLSAqIFByb3ZpZGUgdGhlIFIgY29kZXMgd2l0aCBvdXRwdXRzIGFuZCBleHBsYWluIGV2ZXJ5dGhpbmcgdGhhdCB5b3UgZG8gaW4gdGhpcyBzdGVwLiAgLS0+DQoNCg0KYGBge3J9DQoNCiMgQ3JlYXRlIGEgbmV3IGRhdGEgZnJhbWUsIHByb3ZpZGUgUiBjb2RlcyBoZXJlLg0KDQoNCmBgYA0KDQpQcm92aWRlIGV4cGxhbmF0aW9ucyBoZXJlLg0KDQo8IS0tICMjIElNUE9SVEFOVCBOT1RFOiAgLS0+DQoNCjwhLS0gVGhlIHJlcG9ydCBtdXN0IGJlIHVwbG9hZGVkIHRvIEFzc2Vzc21lbnQgMSBzZWN0aW9uIGluIENhbnZhcyBhcyBhICoqUERGKiogZG9jdW1lbnQgd2l0aCBSIGNvZGVzIGFuZCBvdXRwdXRzIHNob3dpbmcuIFRoZSBlYXNpZXN0IHdheSB0byBhY2hpZXZlIHRoaXMgaXMgdG8gcnVuIGFsbCBSIGNodW5rcyBmaXJzdCwgdGhlbiAqKlByZXZpZXcqKiB5b3VyIG5vdGVib29rIGluICoqSFRNTCoqIChieSBjbGlja2luZyBQcmV2aWV3KSwgdGhlbiAqKk9wZW4gaW4gQnJvd3NlciAoQ2hyb21lKSoqLCB0aGVuICoqUmlnaHQgQ2xpY2sgb24gdGhlIHJlcG9ydCBpbiBDaHJvbWUqKiAsIHRoZW4gKipDbGljayBQcmludCoqIGFuZCBTZWxlY3QgdGhlIERlc3RpbmF0aW9uIE9wdGlvbiB0byAqKlNhdmUgYXMgUERGKiouIFVwbG9hZCB0aGlzIFBERiByZXBvcnQgYXMgb25lIHNpbmdsZSBmaWxlIHZpYSB0aGUgQXNzZXNzbWVudCAxIHBhZ2UgaW4gQ0FOVkFTLiAtLT4NCg0KDQoNCjwhLS0gKipERUxFVEUgdGhlIGluc3RydWN0aW9uYWwgdGV4dCBwcm92aWRlZCBpbiB0aGUgdGVtcGxhdGUuIEZhaWx1cmUgdG8gZG8gdGhpcyB3aWxsIElOQ1JFQVNFIHRoZSBTSU1JTEFSSVRZIElOREVYIHJlcG9ydGVkIGluIFRVUk5JVElOKiogSWYgeW91IGhhdmUgYW55IHF1ZXN0aW9ucyByZWdhcmRpbmcgdGhlIEFzc2Vzc21lbnQgaW5zdHJ1Y3Rpb25zIGFuZCB0aGUgUiB0ZW1wbGF0ZSwgcGxlYXNlIHBvc3QgaXQgb24gdGhlIGRpc2N1c3Npb24gYm9hcmQuICAtLT4NCg0KPGJyPg0KPGJyPg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRhdGEgV3JhbmdsaW5nIChEYXRhIFByZXByb2Nlc3NpbmcpIg0KYXV0aG9yOiAiSmVyZW15IEppYW4gWmhpIENoaWEiDQpzdWJ0aXRsZTogUHJhY3RpY2FsIGFzc2Vzc21lbnQgMQ0KZGF0ZTogIjExLzA4LzIwMjEiDQpvdXRwdXQ6DQogIGh0bWxfZG9jdW1lbnQ6DQogICAgZGZfcHJpbnQ6IHBhZ2VkDQogIHBkZl9kb2N1bWVudDogZGVmYXVsdA0KICBodG1sX25vdGVib29rOiBkZWZhdWx0DQotLS0NCg0KDQojIyAqKlNldHVwKioNCg0KYGBge3J9DQoNCiMgTG9hZCB0aGUgbmVjZXNzYXJ5IHBhY2thZ2VzIHJlcXVpcmVkIHRvIHJlcHJvZHVjZSB0aGUgcmVwb3J0LiBGb3IgZXhhbXBsZToNCg0KbGlicmFyeShrYWJsZUV4dHJhKQ0KbGlicmFyeShtYWdyaXR0cikNCmxpYnJhcnkoZHBseXIpDQpsaWJyYXJ5KHJlYWRyKQ0KbGlicmFyeSh0aWR5cikNCmxpYnJhcnkoa25pdHIpDQoNCg0KYGBgDQoNCg0KIyMgKipTdHVkZW50IG5hbWVzLCBudW1iZXJzIGFuZCBwZXJjZW50YWdlIG9mIGNvbnRyaWJ1dGlvbnMqKg0KYGBge3IsIGVjaG89RkFMU0V9DQoNCiMgQWRkIHlvdXIgbmFtZXMsIG51bWJlcnMgYW5kIHBlcmNlbnRhZ2Ugb2YgeW91ciBjb250cmlidXRpb24gaGVyZS4NCg0KbmE8LSBjKCJKZXJlbXkgSmlhbiBaaGkgQ2hpYSIpDQpubzwtIGMoIjM5MTc1MTUiKQ0KcGM8LSBjKCIxMDAlIikNCg0KczwtIGRhdGEuZnJhbWUoY2JpbmQobmEsbm8scGMpKQ0KY29sbmFtZXMocyk8LSBjKCJTdHVkZW50IG5hbWUiLCAiU3R1ZGVudCBudW1iZXIiLCAiUGVyY2VudGFnZSBvZiBjb250cmlidXRpb24iKQ0KDQpzICU+JSBrYmwoY2FwdGlvbiA9ICJHcm91cCBpbmZvcm1hdGlvbiIpICU+JQ0KICBrYWJsZV9jbGFzc2ljKGZ1bGxfd2lkdGggPSBGLCBodG1sX2ZvbnQgPSAiQ2FtYnJpYSIpDQoNCg0KDQoNCmBgYA0KDQojIyAqKkRhdGEgRGVzY3JpcHRpb24qKg0KDQoqIFRoaXMgZGF0YXNldCBjb25zaXN0cyBvZiBhbGwgTmV0ZmxpeCBvcmlnaW5hbCBmaWxtcywgZG9jdW1lbnRhcmllcyBhbmQgc3BlY2lhbHMgcmVsZWFzZWQgYXMgb2YgSnVuZSAxc3QsIDIwMjEuDQoqIFRoZSBjcmVhdG9yIG9mIHRoaXMgZGF0YXNldCB3ZWIgc2NyYXBlZCB0aGUgZGF0YSBmcm9tIFdpa2lwZWRpYSBhbmQgaW50ZWdyYXRlZCBpdCB3aXRoIGFub3RoZXIgZGF0YXNldCBjb25zaXN0aW5nIG9mIGFsbCB0aGVpciBjb3JyZXNwb25kaW5nIElNREIgc2NvcmVzLg0KKiBVUkwgb2YgZGF0YXNldDogaHR0cHM6Ly93d3cua2FnZ2xlLmNvbS9sdWlzY29ydGVyL25ldGZsaXgtb3JpZ2luYWwtZmlsbXMtaW1kYi1zY29yZXMvdmVyc2lvbi8xDQoNCiMjIyAqKlZhcmlhYmxlcyBvZiBEYXRhc2V0KioNCg0KKiBUaXRsZSBvZiB0aGUgRmlsbQ0KKiBHZW5yZSBvZiB0aGUgRmlsbQ0KKiBPcmlnaW5hbCBQcmVtaWVyZSBEYXRlDQoqIFJ1bnRpbWUgKE1pbnV0ZXMpDQoqIElNREIgU2NvcmVzIChhcyBvZiAwMS8wNi8yMDIxKQ0KKiBMYW5ndWFnZXMgY3VycmVudGx5IEF2YWlsYWJsZSAoYXMgb2YgMDEvMDYvMjAyMSkNCg0KIyMgKipSZWFkL0ltcG9ydCBEYXRhKioNCg0KPCEtLSBSZWFkL0ltcG9ydCB0aGUgZGF0YSBpbnRvIFIsIHRoZW4gc2F2ZSBpdCBhcyBhIGRhdGEgZnJhbWUuIFlvdSBjYW4gdXNlIEJhc2UgUiBmdW5jdGlvbnMgb3IgcmVhZHIsIHhsc3gsIHJlYWR4bCwgZm9yZWlnbiwgcnZlc3QgcGFja2FnZXMgZm9yIHRoaXMgcHVycG9zZS4gSW4gdGhpcyBzdGVwLCB5b3UgbXVzdCBwcm92aWRlIHRoZSBSIGNvZGVzIHdpdGggb3V0cHV0cyAoaS5lLiBoZWFkIG9mIGRhdGEgc2V0KSBhbmQgZXhwbGFpbiBldmVyeXRoaW5nIHRoYXQgeW91IGRvIGluIG9yZGVyIHRvIGltcG9ydC9yZWFkL3NjcmFwZSB0aGUgZGF0YSBzZXQuIFlvdSBjYW4gcHJvdmlkZSB0aGUgUiBjb2RlcyB3aXRoIG91dHB1dHMgdXNpbmcgUiBjaHVua3MgbGlrZSB0aGlzOiAtLT4NCg0KYGBge3J9DQoNCiMgSW1wb3J0IGRhdGFzZXQNCm5ldGZsaXggPC0gcmVhZF9jc3YoIk5ldGZsaXhPcmlnaW5hbHMuY3N2IikNCg0KIyBDaGVjayBmaXJzdCBmZXcgcm93cyBvZiBpbXBvcnRlZCBkYXRhc2V0DQpoZWFkKG5ldGZsaXgpDQoNCmBgYA0KDQpUaGUgZGF0YXNldCBpcyBpbXBvcnRlZCB1c2luZyByZWFkcidzIHJlYWRfY3N2KCkgZnVuY3Rpb24uIFRoZSBpbXBvcnRlZCBkYXRhc2V0IGhhcyBhIGRhdGEgc3RydWN0dXJlIG9mIGEgdGliYmxlLiBUaGUgY29sdW1ucyBhbmQgZmlyc3QgZmV3IHJvd3Mgb2YgdGhlIGRhdGFzZXQgYXJlIHRoZW4gaW5zcGVjdGVkIHVzaW5nIFIncyBiYXNlIGZ1bmN0aW9uIGhlYWQoKS4NCg0KIyMgKipJbnNwZWN0IGFuZCBVbmRlcnN0YW5kKioNCg0KDQpgYGB7cn0NCg0KIyBJbnNwZWN0IHN0cnVjdHVyZSBvZiBkYXRhDQpzdHIobmV0ZmxpeCkNCg0KYGBgDQoNClRoZSBvdXRwdXQgYWJvdmUgZGlzcGxheXMgYWxsIHRoZSB2YXJpYWJsZXMgYW5kIHRoZWlyIGRhdGEgdHlwZXMuIFRoZSBUaXRsZSwgR2VucmUsIFByZW1pZXJlIGFuZCBMYW5ndWFnZSBjb2x1bW5zIGFyZSBkZXRlY3RlZCBieSBSIGFzIGNoYXJhY3RlcnMgYXMgdGhleSBjb250YWluIHN0cmluZ3MgaW4gdGhlIG9ic2VydmF0aW9ucy4gUnVudGltZSBhbmQgSU1EQiBTY29yZSBjb2x1bW5zIGFyZSBkZXRlY3RlZCBhcyBudW1lcmljYWwgZGF0YSBhcyB0aGV5IGNvbnRhaW4gbnVtYmVycyB3aXRoaW4gdGhlIGRhdGEuDQoNCmBgYHtyfQ0KDQojIENvbnZlcnQgcHJlbWllcmUgY29sdW1uJ3MgZGF0YSB0eXBlDQpuZXRmbGl4JFByZW1pZXJlIDwtIGFzLkRhdGUobmV0ZmxpeCRQcmVtaWVyZSwgZm9ybWF0ID0iJUIgJWQsICVZIikNCmhlYWQobmV0ZmxpeCRQcmVtaWVyZSkNCg0KYGBgDQpUaGUgUHJlbWllcmUgY29sdW1uIHdhcyBpbml0aWFsbHkgcmVjb2duaXNlZCBhcyBhIGNoYXJhY3RlciBkYXRhIHR5cGUuIFRoZSBhYm92ZSBjb2RlIGNvbnZlcnRzIHRoaXMgY2hhcmFjdGVyIGludG8gYSBkYXRlIGZvcm1hdCwgd2hpY2ggYWxsb3dzIGZvciBhbnkgdGltZS1zZXJpZXMgYW5hbHlzaXMgdG8gYmUgZG9uZSBpZiBuZWVkZWQuDQoNCmBgYHtyfQ0KDQojIENvbnZlcnQgUnVudGltZSBjb2x1bW4ncyBkYXRhIHR5cGUNCm5ldGZsaXgkUnVudGltZSA8LSBhcy5pbnRlZ2VyKG5ldGZsaXgkUnVudGltZSkNCmNsYXNzKG5ldGZsaXgkUnVudGltZSkNCg0KYGBgDQpBcyB0aGUgdmFsdWVzIGluIHRoZSBSdW50aW1lIGNvbHVtbiBvbmx5IHRha2UgaW50ZWdlcnMgYW5kIG5vdCB2YWx1ZXMgd2l0aCBkZWNpbWFscywgaXQgaXMgdGhlbiBjb252ZXJ0ZWQgZnJvbSBhIGRvdWJsZSB2YXJpYWJsZSBpbnRvIGFuIGludGVnZXIuDQoNCmBgYHtyfQ0KIyBDaGFuZ2UgR2VucmUgYW5kIExhbmd1YWdlIHZhcmlhYmxlcyB0byBmYWN0b3JzDQpuZXRmbGl4JEdlbnJlIDwtIGZhY3RvcihuZXRmbGl4JEdlbnJlKQ0KbmV0ZmxpeCRMYW5ndWFnZSA8LSBmYWN0b3IobmV0ZmxpeCRMYW5ndWFnZSkNCg0KIyBDaGVjayBmYWN0b3JzDQpsZXZlbHMobmV0ZmxpeCRHZW5yZSkNCmBgYA0KVGhlIGFib3ZlIG91dHB1dCBkaXNwbGF5cyB0aGUgbGV2ZWxzIGluIHRoZSBHZW5yZSBmYWN0b3IuIFRoZSBHZW5yZSB2YXJpYWJsZSBkaXNwbGF5cyB0aGUgdmFyaW91cyBjYXRlZ29yaWNhbCB0eXBlcyBvZiBnZW5yZSBhbmQgdGhlIExhbmd1YWdlcyB2YXJpYWJsZSBzaG93cyB0aGUgbGFuZ3VhZ2VzIG9mZmVyZWQgaW4gdGhlIE5ldGZsaXggc2hvdy4gVGhlcmVmb3JlLCBpdCB3b3VsZCBiZSBhcHByb3ByaWF0ZSBmb3IgdGhlc2UgdHdvIHZhcmlhYmxlcyB0byBiZSBmYWN0b3JzIGluc3RlYWQgb2YgY2hhcmFjdGVycy4NCg0KDQpgYGB7cn0NCg0KIyBJbnNwZWN0IHN0cnVjdHVyZSBvZiBkYXRhIGFmdGVyIGNvbnZlcnNpb25zDQpzdHIobmV0ZmxpeCkNCg0KYGBgDQpGcm9tIHRoZSBhYm92ZSBvdXRwdXQsIGl0IGNhbiBiZSBzZWVuIHRoYXQgdGhlIGRhdGEgdHlwZXMgZm9yIHRoZSBQcmVtaWVyZSBhbmQgUnVudGltZSBjb2x1bW4gaGFzIGJlZW4gY2hhbmdlZCB0byBEYXRlIGFuZCBJbnRlZ2VyIHJlc3BlY3RpdmVseS4gVGhlIEdlbnJlIGFuZCBMYW5ndWFnZSB2YXJpYWJsZXMgaGF2ZSBiZWVuIGNvbnZlcnRlZCB0byBmYWN0b3JzIGFzIHdlbGwuDQoNCiMjICoqU3Vic2V0dGluZyoqIA0KDQo8IS0tIFN1YnNldCB0aGUgZGF0YSBmcmFtZSB1c2luZyB0aGUgZmlyc3QgMTAgb2JzZXJ2YXRpb25zIChpbmNsdWRlIGFsbCB2YXJpYWJsZXMpLiBUaGVuIGNvbnZlcnQgaXQgdG8gYSBtYXRyaXguIENoZWNrIHRoZSBzdHJ1Y3R1cmUgb2YgdGhhdCBtYXRyaXggKGkuZS4gY2hlY2sgd2hldGhlciB0aGUgbWF0cml4IGlzIGEgY2hhcmFjdGVyLCBudW1lcmljLCBpbnRlZ2VyLCBmYWN0b3IsIG9yIGxvZ2ljYWwpIGFuZCBleHBsYWluIGluIGEgZmV3IHdvcmRzIHdoeSB5b3UgZW5kZWQgdXAgd2l0aCB0aGF0IHN0cnVjdHVyZS4gUHJvdmlkZSB0aGUgUiBjb2RlcyB3aXRoIG91dHB1dHMgYW5kIGV4cGxhaW4gZXZlcnl0aGluZyB0aGF0IHlvdSBkbyBpbiB0aGlzIHN0ZXAuIC0tPg0KDQoNCg0KYGBge3J9DQoNCiMgU3Vic2V0IGRhdGEgdG8gZmlyc3QgMTAgcm93cyBhbmQgbWFpbnRhaW4gYWxsIGNvbHVtbnMNCm5ldGZsaXgyIDwtIG5ldGZsaXhbMToxMCxdDQoNCiMgQXNzaWduIHJvdyBuYW1lIHN0cmluZ3MgdG8gYSB2YXJpYWJsZQ0Kcm5hbWVzIDwtIGMoIk1vdmllIDEiLCAiTW92aWUgMiIsICJNb3ZpZSAzIiwgIk1vdmllIDQiLCAiTW92aWUgNSIsICJNb3ZpZSA2IiwgIk1vdmllIDciLCAiTW92aWUgOCIsICJNb3ZpZSA5IiwgIk1vdmllIDEwIikNCg0KIyBDb252ZXJ0IHRpYmJsZSB0byBtYXRyaXgNCm5ldGZsaXhfbXggPC0gYXMubWF0cml4KG5ldGZsaXgyKQ0KDQojIEFkZCByb3cgbmFtZXMgdG8gbWF0cml4DQpyb3cubmFtZXMobmV0ZmxpeF9teCkgPC0gcm5hbWVzDQoNCiMgQ2hlY2sgbWF0cml4DQpuZXRmbGl4X214DQpgYGANClRoZSBhYm92ZSBjb2RlIHN1YnNldHMgdGhlIG9yaWdpbmFsIHRpYmJsZSB0byBqdXN0IHRoZSBmaXJzdCAxMCBvYnNlcnZhdGlvbnMgYWxvbmcgd2l0aCBhbGwgdGhlaXIgcmVzcGVjdGl2ZSBjb2x1bW4gdmFyaWFibGVzLiBUaGUgdGliYmxlIGlzIHRoZW4gY29udmVydGVkIGludG8gYSBtYXRyaXggYW5kIGFzc2lnbmVkIHJvdyBuYW1lcy4gQ29sdW1uIG5hbWVzIHdlcmUgbm90IGFzc2lnbmVkIGFzIHRoZSBvcmlnaW5hbCBjb2x1bW4gbmFtZXMgYWN0IGFzIHRoZSBjb2x1bW4gbmFtZXMuIFRoZSBvdXRwdXQgb2YgdGhlIG1hdHJpeCBpcyBhbHNvIGRpc3BsYXllZCBhYm92ZS4NCg0KYGBge3J9DQpuZXRmbGl4X214WyJNb3ZpZSA4IiwgIkdlbnJlIl0NCg0KYGBgDQpFYWNoIGVsZW1lbnQgb2YgdGhlIG1hdHJpeCBjYW4gYmUgcmV0cmlldmVkIGJ5IGluZGV4aW5nIHRoZWlyIHJlc3BlY3RpdmUgcm93IGFuZCBjb2x1bW4gbmFtZXMgYXMgc2hvd24gaW4gdGhlIGFib3ZlIGNvZGUuDQoNCmBgYHtyfQ0KYXR0cmlidXRlcyhuZXRmbGl4X214KQ0KYGBgDQpUaGUgdW5kZXJseWluZyBzdHJ1Y3R1cmUgb2YgdGhpcyBtYXRyaXggaXMgc2hvd24gdXNpbmcgdGhlIGF0dHJpYnV0ZXMoKSBmdW5jdGlvbi4gVGhlIG51bWJlciBvZiByb3dzIGFuZCBjb2x1bW5zIGFyZSBkaXNwbGF5ZWQgYWxvbmcgd2l0aCBhbGwgdGhlIGFzc2lnbmVkIHJvdyBhbmQgY29sdW1uIG5hbWVzLg0KDQpgYGB7cn0NCnN0cihuZXRmbGl4X214KQ0KYGBgDQpCeSBjaGVja2luZyB0aGUgc3RydWN0dXJlIG9mIHRoZSBtYXRyaXgsIGl0IGNhbiBiZSBzZWVuIHRoYXQgdGhlIGRhdGEgdHlwZXMgb2YgZWFjaCBlbGVtZW50IGlzIGEgY2hhcmFjdGVyLiBUaGlzIGlzIGJlY2F1c2UgYWxsIGVsZW1lbnRzIHRoYXQgZXhpc3Qgd2l0aGluIGEgbWF0cml4IG11c3QgYmUgb2Ygc2FtZSBjbGFzcywgaW4gdGhpcyBjYXNlIHRoZXkgYXJlIGFsbCBzdG9yZWQgYXMgY2hhcmFjdGVycy4NCg0KIyMgKipDcmVhdGUgYSBuZXcgRGF0YSBGcmFtZSoqDQoNCjwhLS0gWW91IHdpbGwgY3JlYXRlIGEgbmV3IGRhdGEgZnJhbWUgZnJvbSBzY3JhdGNoLiBOb3RlIHRoYXQsIHRoaXMgc3RlcCBpcyBpbmRlcGVuZGVudCBmcm9tIHRoZSBkYXRhc2V0IHRoYXQgeW91IHVzZWQgaW4gdGhlIHByZXZpb3VzIHN0ZXBzLiAgLS0+DQoNCjwhLS0gSW4gdGhpcyBzdGVwIHlvdSBzaG91bGQ6IC0tPg0KDQo8IS0tICogQ3JlYXRlIGEgZGF0YSBmcmFtZSBmcm9tIHNjcmF0Y2ggd2l0aCAyIHZhcmlhYmxlcyBhbmQgMTAgb2JzZXJ2YXRpb25zLiBZb3VyIGRhdGEgZnJhbWUgaGFzIHRvIGNvbnRhaW4gb25lIGludGVnZXIgdmFyaWFibGUgYW5kIG9uZSBvcmRpbmFsIHZhcmlhYmxlLiBNYWtlIHN1cmUgdGhhdCB5b3UgZmFjdG9yaXNlZCBhbmQgb3JkZXJlZCB0aGUgb3JkaW5hbCB2YXJpYWJsZSBwcm9wZXJseS4gU2hvdyB0aGUgc3RydWN0dXJlIG9mIHlvdXIgdmFyaWFibGVzIGFuZCB0aGUgbGV2ZWxzIG9mIHRoZSBvcmRpbmFsIHZhcmlhYmxlLiAtLT4NCg0KPCEtLSAqIENyZWF0ZSBhbm90aGVyIG51bWVyaWMgdmVjdG9yIGFuZCB1c2UgY2JpbmQoKSB0byBhZGQgdGhpcyB2ZWN0b3IgdG8geW91ciBkYXRhIGZyYW1lLiBBZnRlciB0aGlzIHN0ZXAgeW91IHNob3VsZCBoYXZlIDMgdmFyaWFibGVzIGluIHRoZSBkYXRhIGZyYW1lLiAgLS0+DQoNCg0KPCEtLSAqIFByb3ZpZGUgdGhlIFIgY29kZXMgd2l0aCBvdXRwdXRzIGFuZCBleHBsYWluIGV2ZXJ5dGhpbmcgdGhhdCB5b3UgZG8gaW4gdGhpcyBzdGVwLiAgLS0+DQoNCg0KYGBge3J9DQoNCiMgQ3JlYXRlIGEgbmV3IGRhdGEgZnJhbWUsIHByb3ZpZGUgUiBjb2RlcyBoZXJlLg0KDQoNCmBgYA0KDQpQcm92aWRlIGV4cGxhbmF0aW9ucyBoZXJlLg0KDQo8IS0tICMjIElNUE9SVEFOVCBOT1RFOiAgLS0+DQoNCjwhLS0gVGhlIHJlcG9ydCBtdXN0IGJlIHVwbG9hZGVkIHRvIEFzc2Vzc21lbnQgMSBzZWN0aW9uIGluIENhbnZhcyBhcyBhICoqUERGKiogZG9jdW1lbnQgd2l0aCBSIGNvZGVzIGFuZCBvdXRwdXRzIHNob3dpbmcuIFRoZSBlYXNpZXN0IHdheSB0byBhY2hpZXZlIHRoaXMgaXMgdG8gcnVuIGFsbCBSIGNodW5rcyBmaXJzdCwgdGhlbiAqKlByZXZpZXcqKiB5b3VyIG5vdGVib29rIGluICoqSFRNTCoqIChieSBjbGlja2luZyBQcmV2aWV3KSwgdGhlbiAqKk9wZW4gaW4gQnJvd3NlciAoQ2hyb21lKSoqLCB0aGVuICoqUmlnaHQgQ2xpY2sgb24gdGhlIHJlcG9ydCBpbiBDaHJvbWUqKiAsIHRoZW4gKipDbGljayBQcmludCoqIGFuZCBTZWxlY3QgdGhlIERlc3RpbmF0aW9uIE9wdGlvbiB0byAqKlNhdmUgYXMgUERGKiouIFVwbG9hZCB0aGlzIFBERiByZXBvcnQgYXMgb25lIHNpbmdsZSBmaWxlIHZpYSB0aGUgQXNzZXNzbWVudCAxIHBhZ2UgaW4gQ0FOVkFTLiAtLT4NCg0KDQoNCjwhLS0gKipERUxFVEUgdGhlIGluc3RydWN0aW9uYWwgdGV4dCBwcm92aWRlZCBpbiB0aGUgdGVtcGxhdGUuIEZhaWx1cmUgdG8gZG8gdGhpcyB3aWxsIElOQ1JFQVNFIHRoZSBTSU1JTEFSSVRZIElOREVYIHJlcG9ydGVkIGluIFRVUk5JVElOKiogSWYgeW91IGhhdmUgYW55IHF1ZXN0aW9ucyByZWdhcmRpbmcgdGhlIEFzc2Vzc21lbnQgaW5zdHJ1Y3Rpb25zIGFuZCB0aGUgUiB0ZW1wbGF0ZSwgcGxlYXNlIHBvc3QgaXQgb24gdGhlIGRpc2N1c3Npb24gYm9hcmQuICAtLT4NCg0KPGJyPg0KPGJyPg0K</div>
 
 
 

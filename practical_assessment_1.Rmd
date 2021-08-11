@@ -77,7 +77,7 @@ head(netflix)
 
 ```
 
-The dataset is imported using readr's read_csv() function. The imported dataset has a data structure of a tibble. The columns and first few rows of the dataset is then inspected using R's base function head().
+The dataset is imported using readr's read_csv() function. The imported dataset has a data structure of a tibble. The columns and first few rows of the dataset are then inspected using R's base function head().
 
 ## **Inspect and Understand**
 
@@ -110,12 +110,23 @@ class(netflix$Runtime)
 As the values in the Runtime column only take integers and not values with decimals, it is then converted from a double variable into an integer.
 
 ```{r}
+# Change Genre and Language variables to factors
+netflix$Genre <- factor(netflix$Genre)
+netflix$Language <- factor(netflix$Language)
+
+# Check factors
+levels(netflix$Genre)
+```
+The above output displays the levels in the Genre factor. The Genre variable displays the various categorical types of genre and the Languages variable shows the languages offered in the Netflix show. Therefore, it would be appropriate for these two variables to be factors instead of characters.
+
+
+```{r}
 
 # Inspect structure of data after conversions
 str(netflix)
 
 ```
-From the above output, it can be seen that the data types for the Premiere and Runtime column has been changed to Date and Integer respectively.
+From the above output, it can be seen that the data types for the Premiere and Runtime column has been changed to Date and Integer respectively. The Genre and Language variables have been converted to factors as well.
 
 ## **Subsetting** 
 
@@ -125,13 +136,38 @@ From the above output, it can be seen that the data types for the Premiere and R
 
 ```{r}
 
-# Subset your data and convert it to a matrix, provide R codes here.
+# Subset data to first 10 rows and maintain all columns
+netflix2 <- netflix[1:10,]
 
+# Assign row name strings to a variable
+rnames <- c("Movie 1", "Movie 2", "Movie 3", "Movie 4", "Movie 5", "Movie 6", "Movie 7", "Movie 8", "Movie 9", "Movie 10")
+
+# Convert tibble to matrix
+netflix_mx <- as.matrix(netflix2)
+
+# Add row names to matrix
+row.names(netflix_mx) <- rnames
+
+# Check matrix
+netflix_mx
+```
+The above code subsets the original tibble to just the first 10 observations along with all their respective column variables. The tibble is then converted into a matrix and assigned row names. Column names were not assigned as the original column names act as the column names. The output of the matrix is also displayed above.
+
+```{r}
+netflix_mx["Movie 8", "Genre"]
 
 ```
+Each element of the matrix can be retrieved by indexing their respective row and column names as shown in the above code.
 
-Provide explanations here.
+```{r}
+attributes(netflix_mx)
+```
+The underlying structure of this matrix is shown using the attributes() function. The number of rows and columns are displayed along with all the assigned row and column names.
 
+```{r}
+str(netflix_mx)
+```
+By checking the structure of the matrix, it can be seen that the data types of each element is a character. This is because all elements that exist within a matrix must be of same class, in this case they are all stored as characters.
 
 ## **Create a new Data Frame**
 
