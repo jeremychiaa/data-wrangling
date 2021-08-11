@@ -69,27 +69,53 @@ s %>% kbl(caption = "Group information") %>%
 
 ```{r}
 
-# Import the data, provide your R codes here.
+# Import dataset
+netflix <- read_csv("NetflixOriginals.csv")
 
-
+# Check first few rows of imported dataset
+head(netflix)
 
 ```
 
-Provide explanations here. 
-
+The dataset is imported using readr's read_csv() function. The imported dataset has a data structure of a tibble. The columns and first few rows of the dataset is then inspected using R's base function head().
 
 ## **Inspect and Understand**
 
 
 ```{r}
 
-# Inspection of your data, provide R codes here.
-
-
+# Inspect structure of data
+str(netflix)
 
 ```
 
-Provide explanations here.
+The output above displays all the variables and their data types. The Title, Genre, Premiere and Language columns are detected by R as characters as they contain strings in the observations. Runtime and IMDB Score columns are detected as numerical data as they contain numbers within the data.
+
+```{r}
+
+# Convert premiere column's data type
+netflix$Premiere <- as.Date(netflix$Premiere, format ="%B %d, %Y")
+head(netflix$Premiere)
+
+```
+The Premiere column was initially recognised as a character data type. The above code converts this character into a date format, which allows for any time-series analysis to be done if needed.
+
+```{r}
+
+# Convert Runtime column's data type
+netflix$Runtime <- as.integer(netflix$Runtime)
+class(netflix$Runtime)
+
+```
+As the values in the Runtime column only take integers and not values with decimals, it is then converted from a double variable into an integer.
+
+```{r}
+
+# Inspect structure of data after conversions
+str(netflix)
+
+```
+From the above output, it can be seen that the data types for the Premiere and Runtime column has been changed to Date and Integer respectively.
 
 ## **Subsetting** 
 
