@@ -12,9 +12,7 @@ output:
 
 
 ## **Setup**
-
 ```{r}
-
 # Load the necessary packages required to reproduce the report. For example:
 
 library(kableExtra)
@@ -23,14 +21,11 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(knitr)
-
-
 ```
 
 
 ## **Student names, numbers and percentage of contributions**
 ```{r, echo=FALSE}
-
 # Add your names, numbers and percentage of your contribution here.
 
 na<- c("Jeremy Jian Zhi Chia")
@@ -42,10 +37,6 @@ colnames(s)<- c("Student name", "Student number", "Percentage of contribution")
 
 s %>% kbl(caption = "Group information") %>%
   kable_classic(full_width = F, html_font = "Cambria")
-
-
-
-
 ```
 
 ## **Data Description**
@@ -64,49 +55,39 @@ s %>% kbl(caption = "Group information") %>%
 * Languages currently Available (as of 01/06/2021)
 
 ## **Read/Import Data**
-
 <!-- Read/Import the data into R, then save it as a data frame. You can use Base R functions or readr, xlsx, readxl, foreign, rvest packages for this purpose. In this step, you must provide the R codes with outputs (i.e. head of data set) and explain everything that you do in order to import/read/scrape the data set. You can provide the R codes with outputs using R chunks like this: -->
-
 ```{r}
-
 # Import dataset
 netflix <- read_csv("NetflixOriginals.csv")
 
 # Check first few rows of imported dataset
 head(netflix)
-
 ```
 
 The dataset is imported using readr's read_csv() function. The imported dataset has a data structure of a tibble. The columns and first few rows of the dataset are then inspected using R's base function head().
 
 ## **Inspect and Understand**
-
-
 ```{r}
-
 # Inspect structure of data
 str(netflix)
-
 ```
 
 The output above displays all the variables and their data types. The Title, Genre, Premiere and Language columns are detected by R as characters as they contain strings in the observations. Runtime and IMDB Score columns are detected as numerical data as they contain numbers within the data.
 
 ```{r}
-
 # Convert premiere column's data type
 netflix$Premiere <- as.Date(netflix$Premiere, format ="%B %d, %Y")
 head(netflix$Premiere)
-
 ```
+
 The Premiere column was initially recognised as a character data type. The above code converts this character into a date format, which allows for any time-series analysis to be done if needed.
 
 ```{r}
-
 # Convert Runtime column's data type
 netflix$Runtime <- as.integer(netflix$Runtime)
 class(netflix$Runtime)
-
 ```
+
 As the values in the Runtime column only take integers and not values with decimals, it is then converted from a double variable into an integer.
 
 ```{r}
@@ -115,27 +96,23 @@ netflix$Genre <- factor(netflix$Genre)
 netflix$Language <- factor(netflix$Language)
 
 # Check factors
-levels(netflix$Genre)
+levels(netflix$Language)
 ```
+
 The above output displays the levels in the Genre factor. The Genre variable displays the various categorical types of genre and the Languages variable shows the languages offered in the Netflix show. Therefore, it would be appropriate for these two variables to be factors instead of characters.
 
-
 ```{r}
-
 # Inspect structure of data after conversions
 str(netflix)
-
 ```
+
 From the above output, it can be seen that the data types for the Premiere and Runtime column has been changed to Date and Integer respectively. The Genre and Language variables have been converted to factors as well.
 
 ## **Subsetting** 
 
 <!-- Subset the data frame using the first 10 observations (include all variables). Then convert it to a matrix. Check the structure of that matrix (i.e. check whether the matrix is a character, numeric, integer, factor, or logical) and explain in a few words why you ended up with that structure. Provide the R codes with outputs and explain everything that you do in this step. -->
 
-
-
 ```{r}
-
 # Subset data to first 10 rows and maintain all columns
 netflix2 <- netflix[1:10,]
 
@@ -151,22 +128,25 @@ row.names(netflix_mx) <- rnames
 # Check matrix
 netflix_mx
 ```
+
 The above code subsets the original tibble to just the first 10 observations along with all their respective column variables. The tibble is then converted into a matrix and assigned row names. Column names were not assigned as the original column names act as the column names. The output of the matrix is also displayed above.
 
 ```{r}
 netflix_mx["Movie 8", "Genre"]
-
 ```
+
 Each element of the matrix can be retrieved by indexing their respective row and column names as shown in the above code.
 
 ```{r}
 attributes(netflix_mx)
 ```
+
 The underlying structure of this matrix is shown using the attributes() function. The number of rows and columns are displayed along with all the assigned row and column names.
 
 ```{r}
 str(netflix_mx)
 ```
+
 By checking the structure of the matrix, it can be seen that the data types of each element is a character. This is because all elements that exist within a matrix must be of same class, in this case they are all stored as characters.
 
 ## **Create a new Data Frame**
@@ -182,15 +162,71 @@ By checking the structure of the matrix, it can be seen that the data types of e
 
 <!-- * Provide the R codes with outputs and explain everything that you do in this step.  -->
 
-
 ```{r}
-
 # Create a new data frame, provide R codes here.
-
-
+# Generate random integers
+score <- sample(0:100, 10, replace = F)
+score %>% str()
 ```
 
-Provide explanations here.
+The movie score variable is created using a random number generator that generates 10 integers between 0-100. The data type of the numbers produced are integers.
+
+```{r}
+# Create leveled factor
+scale_fac <- factor( c("Horrendous", "Barely Bearable", "Mediocre", "Above Average", "Out of This World"),
+                      levels = c("Horrendous", "Barely Bearable", "Mediocre", "Above Average", "Out of This World"),
+                      ordered = TRUE )
+scale_fac
+```
+
+A factor of movie rating scale ordinal variable is created by making up several ratings. They are then ordered from perceived worst to best.
+
+```{r}
+# Create dataframe of two columns
+rating_df <- data.frame(Score = score,
+                        Rating = "")
+
+# Create a string of variables for rating scales
+scale_str <- c("Horrendous", "Barely Bearable", "Mediocre", "Above Average", "Out of This World")
+
+# Assign rating in df based on numerical scores
+rating_df$Rating = ifelse(rating_df$Score >=80, scale_str[5],
+                      ifelse(rating_df$Score >=60, scale_str[4],
+                          ifelse(rating_df$Score >=40, scale_str[3], 
+                                 ifelse(rating_df$Score >=20, scale_str[2], scale_str[1]))))
+rating_df
+```
+
+The above codes first creates a dataframe with 2 columns, one with the scores and the other an empty column. The empty cells within the Rating column are then assigned based on the corresponding scores from the Score column.
+
+```{r}
+# Convert rating column to a factor
+rating_df$Rating <- factor(rating_df$Rating, levels = c("Horrendous", "Barely Bearable", "Mediocre", "Above Average", "Out of This World"), ordered = TRUE)
+
+# Check structure of dataframe
+str(rating_df)
+```
+
+When appending the values of the Rating column, the data types of the values were character types. Therefore the Rating column is then factored and ordered after the creation of the dataframe.
+
+```{r}
+# Create a numeric vector
+stars_vec <- c(1, 2, 3, 4, 5)
+
+# Assign number of stars to dataframe
+Stars <- ifelse(rating_df$Score >=80, stars_vec[5],
+                      ifelse(rating_df$Score >=60, stars_vec[4],
+                          ifelse(rating_df$Score >=40, stars_vec[3], 
+                                 ifelse(rating_df$Score >=20, stars_vec[2], stars_vec[1]))))
+
+# Use cbind() to create new column in the dataframe
+rating_df <- cbind(rating_df, Stars)
+
+# Display final dataframe
+rating_df
+```
+
+The above code first assigns 5 values to a variable indicating the number of stars out of 5. Conditional statements are then assigned to a variable which is then used to determine the values in the newly created column. The output above displays the final dataframe of Scores, Rating and Number of Stars.
 
 <!-- ## IMPORTANT NOTE:  -->
 
